@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 10:24:32 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/25 16:06:07 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/01/26 11:54:53 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int		ft_printf(const char *str, va_list ap)
 {
 	va_list		arg;
 
+	verif_flags(str);
 	va_start(arg, str);
 	if
 	va_arg(arg);
