@@ -17,7 +17,7 @@ OBJ_LIBFT = $(SRC_LIBFT:.c=.o)
 
 $(NAME): $(OBJ_LIBFT)
 				ar rc $(NAME) $(OBJ_LIBFT)
-				ranlib $(NAME)
+				#ranlib $(NAME)
 
 %.o: %.c
 				$(CC) -I. -o $@ -c $? $(CFLAGS)
