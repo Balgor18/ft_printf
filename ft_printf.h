@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 10:25:28 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/27 16:37:50 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/01/27 16:56:48 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@
 
 /*
 ** -----------
+*/
+
+/*
+** Need to add a struc for the file and add to s_var
 */
 typedef struct	s_var
 {

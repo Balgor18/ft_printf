@@ -6,12 +6,15 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 15:42:43 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/27 16:49:16 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/01/27 16:56:22 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+/*
+** Need to change this function when a change the struct
+*/
 t_var		ft_fill_struct(char *s, t_var var)
 {
 	while (ft_verif_isdigit(*s))
