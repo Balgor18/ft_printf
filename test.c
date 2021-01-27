@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/25 10:25:28 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/27 14:24:41 by fcatinau         ###   ########.fr       */
+/*   Created: 2021/01/27 13:50:31 by fcatinau          #+#    #+#             */
+/*   Updated: 2021/01/27 14:23:36 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include <stdio.h>
+#include "ft_printf.h"
 
-# include "stdarg.h"
-# include "unistd.h"
-
-typedef struct	t_var
-{
-	char		flag;
-	int			total_width;
-	int			total_print;
-	char		type;
-};
 /*
 ** struct du printf
 ** %[0.-%][0-INF][.][0-INF]d
@@ -35,6 +25,25 @@ typedef struct	t_var
 ** symbole de debut
 */
 
-int		ft_printf(const char *str, va_list ap);
-void	ft_putchar(char c);
-#endif
+/*
+** printf("Le flag %c%c = ", '%', '%');
+** printf("%%\n");
+** printf("Le flag %c%c = ", '%', '-');
+** printf("%s- tu vas ou a gauche ou a droite \n");
+*/
+
+int		main(void)
+{
+	printf("Ex :\n");
+	printf("%-23s<--\n", "bonjour tout le monde");
+	printf("%023s<--\n", "bonjour tout le monde");
+//	ft_printf();
+	return (0);
+}
+
+/*
+** 	printf("%#x\n", 17);
+** 	printf("%#X\n", 17);
+** 	printf("%#f\n", 1.42);
+** 	printf("%#A\n", 1.42);
+*/

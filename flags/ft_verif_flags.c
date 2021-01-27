@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 16:16:52 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/26 17:04:54 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/01/27 12:47:59 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,15 @@
 
 /*
 **  verif si besoin de reonvyer 1 sinpn 0 = faux et 1 = vrai
+*/
+
+/*
+** si le flag est - il mais la chaine a gauche
+**
+**
+**
+**
+**
 */
 
 int		ft_verif_flags(char *str)
@@ -37,9 +46,7 @@ int		ft_verif_flags(char *str)
 	{
 		// = Quatrieme truc dans ma structure
 	}
-	if (*str + 1 == '#')
-	{
-		// Je pense renvoyer vers une autre fonction pour faire les differents cas
-	}
+	if (*str + 1 == '%')
+		ft_putchar('%');
 	return (0);
 }
