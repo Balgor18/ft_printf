@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 10:25:28 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/27 15:51:55 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/01/27 16:29:12 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ typedef struct	s_var
 /*
 ** struct du printf
 ** %[0.-%][0-INF][.][0-INF]d
-** ^   ^     ^          ^  ^
-** |   |     |          |  |
-** |   |     |          |  Type de var afficher
+** ^   ^     ^        ^    ^
+** |   |     |        |    |
+** |   |     |        |    Type de var afficher
 ** |   |     |          total print char
 ** |   |     Total Width
 ** |   Flags
