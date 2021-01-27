@@ -6,13 +6,13 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 10:24:32 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/27 15:41:43 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/01/28 00:17:25 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft(char *str)
+void	ft_parser(char *str)
 {
 	t_var var;
 
@@ -20,8 +20,6 @@ void	ft(char *str)
 	{
 		if (*str == '%')
 			var = ft_verif_pourcent(*str);
-		else
-			ft_putchar(*str);
 		str++;
 	}
 }

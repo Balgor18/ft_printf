@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 10:25:28 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/27 16:56:48 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/01/28 00:15:26 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,17 @@
 ** -----------
 */
 
-/*
-** Need to add a struc for the file and add to s_var
-*/
+typedef struct	s_flag
+{
+	int			fl_per;
+	int			fl_less;
+	int			fl_zero;
+	int			fl_point;
+}				t_flag;
+
 typedef struct	s_var
 {
-	char			flag;
+	t_flag			flag;
 	int				total_width;
 	int				total_print;
 	char			type;
