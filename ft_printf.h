@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 10:25:28 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/27 16:29:12 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/01/27 16:37:50 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,19 +48,19 @@ typedef struct	s_var
 /*
 ** struct
 */
-t_var		ft_init_struct(t_var st);
+t_var			ft_init_struct(t_var st);
 /*
 ** display
 */
-void		ft_putchar(char c);
+void			ft_putchar(char c);
 /*
 ** verif
 */
-t_var		ft_verif_pourcent(char *s);
-int			ft_verif_isdigit(int c);
+t_var			ft_verif_pourcent(char *s);
+int				ft_verif_isdigit(int c);
 /*
 ** main
 */
-int			ft_printf(const char *str, va_list ap);
+int				ft_printf(const char *str, va_list ap);
 
 #endif
