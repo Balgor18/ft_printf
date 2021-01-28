@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 16:56:18 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/28 16:57:24 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/01/28 23:39:46 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,12 @@
 int		ft_strlennb(char *s)
 {
 	size_t	i;
-	
+
+	i = 0;
 	while(ft_verif_isdigit(*s))
 	{
+		s++;
 		i++;
-		*s++;
 	}
 	return (i);
 }

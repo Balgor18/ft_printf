@@ -7,11 +7,14 @@ CFLAGS=-Wall -Wextra -Werror
 RM=rm -f
 
 SRC_LIBFT = include_libft/ft_atoi.c\
+			include_libft/ft_memset.c\
 			include_libft/ft_putchar.c\
+			include_libft/ft_strlennb.c\
 			include_libft/ft_verif_isdigit.c\
 			struct/ft_fill_struct.c\
 			struct/ft_init_struct.c\
 			verif/ft_verif_flags.c\
+			verif/ft_check_type.c\
 			ft_printf.c\
 			test.c
 

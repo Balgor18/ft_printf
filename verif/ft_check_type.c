@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 19:20:03 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/28 19:21:08 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/01/28 22:41:33 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void		ft_check_type(t_var var)
 	{
 		/*Alors je fais un truc */
 	}
-	if (var.type == '%')
+	if (var.type == 'p')
 		ft_putchar(var.type);
 	if (var.type == 'd')
 	{
@@ -34,18 +34,20 @@ void		ft_check_type(t_var var)
 /*
 void		ft_check_type2(t_var var)
 {
-	if (var.type == 'c')
+	if (var.type == 'i')
 	{
-		//Alors je fais un truc 
+		//Alors je fais un truc
 	}
-	if (var.type == 's')
+	if (var.type == 'u')
+		ft_putchar(var.type);
+	if (var.type == 'x')
+	{
+		//Alors je fais un truc
+	}
+	if (var.type == 'X')
 	{
 		//Alors je fais un truc
 	}
 	if (var.type == '%')
 		ft_putchar(var.type);
-	if (var.type == 'd')
-	{
-		//Alors je fais un truc
-	}
 }*/
