@@ -6,13 +6,13 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 16:16:52 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/28 12:00:48 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/01/28 14:49:01 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-t_var		ft_verif_pourcent(char *s)
+t_var		ft_verif_pourcent(char *s, va_list ap)
 {
 	t_var	var;
 
