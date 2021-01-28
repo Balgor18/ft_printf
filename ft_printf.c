@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 10:24:32 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/28 00:17:25 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/01/28 11:27:20 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	ft_parser(char *str)
 	{
 		if (*str == '%')
 			var = ft_verif_pourcent(*str);
+		else
+			ft_putchar(*str);
 		str++;
 	}
 }

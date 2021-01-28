@@ -6,15 +6,11 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 16:16:52 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/28 00:16:38 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/01/28 12:00:48 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-/*
-** Actuellement pas bon je dois changer pour le cas plusieur flag
-*/
 
 t_var		ft_verif_pourcent(char *s)
 {
@@ -23,21 +19,37 @@ t_var		ft_verif_pourcent(char *s)
 	ft_init_struct(var);
 	var = ft_check_flags(var, *s);
 	ft_fill_struct(*s + 1, var);
+	ft_check_the_type(var);
 	return (var);
+}
+
+void		ft_check_the_type(t_var var)
+{
+	if (var.type == 'c')
+	{
+		/*Alors je fais un truc */
+	}
+	if (var.type == 's')
+	{
+		/*Alors je fais un truc */
+	}
+	if (var.type == '%')
+		ft_putchar(var.type);
+	if (var.type == 'd')
+	{
+		/*Alors je fais un truc */
+	}
 }
 
 t_var		ft_check_flags(t_var var, char *s)
 {
-	int tru;
-
-	tru = 1;
 	if (*s + 1 == '-')
-		var.flag.fl_less = tru;
+		var.flag.fl_less = 1;
 	if (*s + 1 == '0')
-		var.flag.fl_zero = tru;
+		var.flag.fl_zero = 1;
 	if (*s + 1 == '.')
-		var.flag.fl_point = tru;
+		var.flag.fl_point = 1;
 	if (*s + 1 == '%')
-		var.flag.fl_per = tru;
+		var.flag.fl_per = 1;
 	return (var);
 }
