@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 10:25:28 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/28 15:25:47 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/01/28 17:22:40 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct	s_var
 	int				total_width;
 	int				total_print;
 	char			type;
+	int				ERROR;
 }				t_var;
 
 /*
@@ -53,19 +54,19 @@ typedef struct	s_var
 ** |   Flags
 ** symbole de debut
 */
-
+/*
+** include
+*/
+void			ft_putchar(char c);
+void			*ft_memset(void *pointeur, int val, size_t size);
 /*
 ** struct
 */
 t_var			ft_init_struct(t_var st);
 /*
-** display
-*/
-void			ft_putchar(char c);
-/*
 ** verif
 */
-t_var		ft_verif_pourcent(char *s, va_list ap);
+t_var			ft_verif_pourcent(char *s, va_list ap);
 int				ft_verif_isdigit(int c);
 /*
 ** main

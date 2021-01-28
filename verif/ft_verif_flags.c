@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 16:16:52 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/28 14:49:01 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/01/28 17:02:15 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ t_var		ft_verif_pourcent(char *s, va_list ap)
 	ft_init_struct(var);
 	var = ft_check_flags(var, *s);
 	ft_fill_struct(*s + 1, var);
+	if (var.ERROR)
+		return (var);
 	ft_check_the_type(var);
 	return (var);
 }
