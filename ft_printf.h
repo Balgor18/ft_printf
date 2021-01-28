@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 10:25:28 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/28 17:22:40 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/01/28 19:07:53 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ typedef struct	s_flag
 typedef struct	s_var
 {
 	t_flag			flag;
-	int				total_width;
-	int				total_print;
+	size_t			total_width;
+	size_t			total_print;
 	char			type;
 	int				ERROR;
 }				t_var;

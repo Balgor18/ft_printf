@@ -6,13 +6,13 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 15:32:53 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/27 16:46:19 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/01/28 19:08:10 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_atoi(char *c)
+size_t		ft_atoi(char *c)
 {
 	int i;
 	int sign;

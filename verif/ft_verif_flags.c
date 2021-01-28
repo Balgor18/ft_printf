@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 16:16:52 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/28 17:02:15 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/01/28 19:19:11 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,24 +23,6 @@ t_var		ft_verif_pourcent(char *s, va_list ap)
 		return (var);
 	ft_check_the_type(var);
 	return (var);
-}
-
-void		ft_check_the_type(t_var var)
-{
-	if (var.type == 'c')
-	{
-		/*Alors je fais un truc */
-	}
-	if (var.type == 's')
-	{
-		/*Alors je fais un truc */
-	}
-	if (var.type == '%')
-		ft_putchar(var.type);
-	if (var.type == 'd')
-	{
-		/*Alors je fais un truc */
-	}
 }
 
 t_var		ft_check_flags(t_var var, char *s)
