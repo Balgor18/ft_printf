@@ -21,8 +21,11 @@ SRC_LIBFT = include_libft/ft_atoi.c\
 OBJ_LIBFT = $(SRC_LIBFT:.c=.o)
 
 $(NAME): $(OBJ_LIBFT)
-				ar rc $(NAME) $(OBJ_LIBFT)
-				ranlib $(NAME)
+#ligne du dessous a degager
+				$(CC) -I. $(OBJ_LIBFT) $(CFLAGS)
+				./a.out
+#				ar rc $(NAME) $(OBJ_LIBFT)
+#				ranlib $(NAME)
 
 %.o: %.c
 				$(CC) -I. -o $@ -c $? $(CFLAGS)
@@ -31,6 +34,8 @@ all: $(NAME)
 
 clean:
 				$(RM) $(OBJ_LIBFT)
+				$(RM) a.out
+#ligne du dessus a suppr
 
 fclean: clean
 				$(RM) $(NAME)
