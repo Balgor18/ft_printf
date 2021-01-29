@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 10:24:32 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/29 16:51:18 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/01/29 18:24:17 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		ft_parser(char *str, va_list ap)
 		// voir comment avance dans str sans dans les autre fonction pour que quand il reviens ici il ne soit plus a la position de depart
 		if (str[i] == '%')
 		{
-			if (!ft_verif_pourcent(&str[i + 1], ap, &i))
+			if (!ft_verif_pourcent(str, ap, &i))
 				return (0);
 		}
 		else{

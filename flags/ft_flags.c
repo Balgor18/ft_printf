@@ -1,39 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_flags.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/09 15:32:53 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/29 18:18:34 by fcatinau         ###   ########.fr       */
+/*   Created: 2021/01/29 17:26:31 by fcatinau          #+#    #+#             */
+/*   Updated: 2021/01/29 17:26:59 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t		ft_atoi(char *c)
+void		ft_flags()
 {
-	size_t i;
-	size_t sign;
-	size_t total;
-
-	total = 0;
-	i = 0;
-	sign = 1;
-	while ((c[i] >= 9 && c[i] <= 13) || c[i] == ' ')
-		i++;
-	if (c[i] == '-' || c[i] == '+')
-	{
-		if (c[i] == '-')
-			sign *= -1;
-		i++;
-	}
-	while (c[i] >= '0' && c[i] <= '9')
-	{
-		total = total * 10;
-		total = total + (c[i] - 48);
-		i++;
-	}
-	return (total * sign);
+	
 }

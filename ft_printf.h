@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 10:25:28 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/29 16:21:34 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/01/29 18:34:19 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,23 +59,23 @@ typedef struct	s_var
 */
 void			ft_putchar(char c);
 void			*ft_memset(void *pointeur, int val, size_t size);
-int				ft_strlennb(char *s);
+int				ft_strlennb(char *s, size_t *pos);
 size_t			ft_atoi(char *c);
 /*
 ** struct
 */
-t_var			ft_fill_struct(char *s, t_var var);
+t_var			ft_fill_struct(char *s, t_var var, size_t *pos);
 t_var			ft_init_struct();
-t_var			ft_fill_w_and_tp(char *s, t_var var);
-char			*ft_fill_nb(char *s, char *nb);
+t_var			ft_fill_w_and_tp(char *s, t_var var, size_t *pos);
+char			*ft_fill_nb(char *s, char *nb, size_t pos);
 /*
 ** verif
 */
 int				ft_verif_pourcent(char *s, va_list ap, size_t *pos);
 int				ft_verif_isdigit(int c);
 t_var			ft_check_flags(t_var var, char *s, size_t *pos);
-void			ft_check_type(t_var var);
-void			ft_check_type2(t_var var); // voir si je garde
+t_var			ft_check_type(t_var var);
+t_var			ft_check_type2(t_var var); // voir si je garde
 /*
 ** main
 */

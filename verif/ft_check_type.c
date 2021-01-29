@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 19:20:03 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/29 00:23:28 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/01/29 17:38:41 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 /* affichage */
 /* cas a gerez cspdiuxX% */
-void		ft_check_type(t_var var)
+t_var		ft_check_type(t_var var)
 {
-	//printf("var.type = %c\n",var.type);
 	if (var.type == 'c')
 	{
 		/*Alors je fais un truc */
@@ -29,20 +28,23 @@ void		ft_check_type(t_var var)
 		ft_putchar(var.type);
 	if (var.type == 'd')
 	{
-		/*Alors je fais un truc */
+		//ft_print_int();
 	}
-	ft_check_type2(var);
+	var = ft_check_type2(var);
+	return (var);
 }
 /* Voir plus tard pour modif */
 
-void		ft_check_type2(t_var var)
+t_var		ft_check_type2(t_var var)
 {
 	if (var.type == 'i')
 	{
 		//Alors je fais un truc
 	}
 	if (var.type == 'u')
-		ft_putchar(var.type);
+	{
+		//Alors je fais un truc
+	}
 	if (var.type == 'x')
 	{
 		//Alors je fais un truc
@@ -53,4 +55,5 @@ void		ft_check_type2(t_var var)
 	}
 	if (var.type == '%')
 		ft_putchar(var.type);
+	return (var);
 }

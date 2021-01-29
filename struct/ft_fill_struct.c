@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 15:42:43 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/29 16:54:30 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/01/29 18:41:17 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,50 +16,55 @@
 ** verif car le while n'est pas bon donc je pense
 ** mettre dans un char * qui est malloc donc free derriere mais d'abord
 ** faire un strlen special pour les digit
-** 
 */
-t_var		ft_fill_struct(char *s, t_var var)
+
+t_var		ft_fill_struct(char *s, t_var var, size_t *pos)
 {
-	ft_fill_w_and_tp(s, var);
+	var = ft_fill_w_and_tp(s, var, pos);
 	if (var.ERROR)
-		return(var);
-	var.type = *s;// verif la valeur de *s
+		return (var);
+	var.type = s[*pos];
 	return (var);
 }
 
-t_var		ft_fill_w_and_tp(char *s, t_var var)
+t_var		ft_fill_w_and_tp(char *s, t_var var, size_t *pos)
 {
 	char	*nb;
 	size_t	size_nb;
+	size_t	last;
 
-	size_nb = ft_strlennb(s);
-	if (!(nb = malloc(sizeof(char)* (size_nb + 1))))
+	last = *pos;
+	size_nb = ft_strlennb(s, pos);
+	if (!(nb = malloc(sizeof(char) * (size_nb + 1))))
 	{
 		var.ERROR = 1;
 		return (var);
 	}
-	nb = ft_fill_nb(s, nb);// voir ce que recup nb de la fonction 
+	nb = ft_fill_nb(s, nb, last);
 	var.total_width = ft_atoi(nb);
-	ft_memset(nb, 0, size_nb);// verif si nb a encore des valeur
+	ft_memset(nb, 0, size_nb);
 	size_nb = 0;
-	if (*s == '.')
+	if (s[*pos] == '.')
 	{
-		nb = ft_fill_nb(s, nb);
+		*pos = *pos + 1;
+		size_nb = ft_strlennb(s, pos);
+		last = *pos;
+		nb = ft_fill_nb(s, nb, last);
 		var.total_print = ft_atoi(nb);
 	}
 	free(nb);
 	return (var);
 }
 
-char		*ft_fill_nb(char *s, char *nb)// test de voir ce que renvoie la fonction
+char		*ft_fill_nb(char *s, char *nb, size_t last)
 {
 	size_t	i;
 
 	i = 0;
-	while (ft_verif_isdigit(*s))
+	while (ft_verif_isdigit(s[last]))
 	{
-		nb[i] = *s;
-		s++;
+		nb[i] = s[last];
+		last++;
 		i++;
 	}
 	nb[i] = '\0';

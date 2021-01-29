@@ -6,20 +6,20 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 16:56:18 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/28 23:39:46 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/01/29 18:18:16 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_strlennb(char *s)
+int		ft_strlennb(char *s, size_t *pos)
 {
 	size_t	i;
 
 	i = 0;
-	while(ft_verif_isdigit(*s))
+	while(ft_verif_isdigit(s[*pos]))
 	{
-		s++;
+		*pos = *pos + 1;
 		i++;
 	}
 	return (i);
