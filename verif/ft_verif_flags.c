@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 16:16:52 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/29 21:43:57 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/01/29 22:07:15 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int			ft_verif_pourcent(char *s, va_list args, size_t *pos)
 
 t_var		ft_check_flags(t_var var, char *s, size_t *pos)
 {
-	if (s[*pos] == '-')
+	if (s[*pos] == '-')// faire while avec fonction de check is type
 	{
 		var.flag.fl_less = 1;
 		*pos = *pos + 1;

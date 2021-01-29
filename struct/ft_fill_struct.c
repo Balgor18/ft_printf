@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 15:42:43 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/29 21:43:50 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/01/29 22:13:48 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ t_var		ft_fill_w_and_tp(char *s, t_var var, size_t *pos)
 	if (s[*pos] == '.')
 	{
 		*pos = *pos + 1;
-		size_nb = ft_strlennb(s, pos);
 		last = *pos;
+		size_nb = ft_strlennb(s, pos);
 		nb = ft_fill_nb(s, nb, last);
 		var.total_print = ft_atoi(nb);
 	}
