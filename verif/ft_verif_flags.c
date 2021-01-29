@@ -6,19 +6,19 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 16:16:52 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/29 00:35:14 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/01/29 17:12:53 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_verif_pourcent(char *s, va_list ap)
+int		ft_verif_pourcent(char *s, va_list ap, size_t *pos)
 {
 	t_var	var;
 
 	(void)ap; // voir pous la use plus tard
 	var = ft_init_struct();
-	var = ft_check_flags(var, s);
+	var = ft_check_flags(var, s, pos);
 	var = ft_fill_struct(s, var);
 	if (var.ERROR)
 		return (0);
@@ -26,27 +26,27 @@ int		ft_verif_pourcent(char *s, va_list ap)
 	return (1);
 }
 
-t_var		ft_check_flags(t_var var, char *s) // si un flag est passe increase +1
+t_var		ft_check_flags(t_var var, char *s, size_t *pos)
 {
-	if (*s == '-')
+	if (s[*pos] == '-' && s[*pos])
 	{
 		var.flag.fl_less = 1;
-		s++;
+		pos++;
 	}
-	if (*s == '0')
+	if (s[*pos] && s[*pos] == '0')
 	{
 		var.flag.fl_zero = 1;
-		s++;
+		pos++;
 	}
-	if (*s == '.')
+	if (s[*pos] == '.' && s[*pos])
 	{
 		var.flag.fl_point = 1;
-		s++;
+		pos++;
 	}
-	if (*s == '*')
+	if (s[*pos] == '*' && s[*pos])
 	{
 		var.flag.fl_star = 1;
-		s++;
+		pos++;
 	}
 	return (var);
 }

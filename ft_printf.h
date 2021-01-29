@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 10:25:28 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/29 00:35:28 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/01/29 16:21:34 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,9 +71,9 @@ char			*ft_fill_nb(char *s, char *nb);
 /*
 ** verif
 */
-int				ft_verif_pourcent(char *s, va_list ap);
+int				ft_verif_pourcent(char *s, va_list ap, size_t *pos);
 int				ft_verif_isdigit(int c);
-t_var			ft_check_flags(t_var var, char *s);
+t_var			ft_check_flags(t_var var, char *s, size_t *pos);
 void			ft_check_type(t_var var);
 void			ft_check_type2(t_var var); // voir si je garde
 /*
