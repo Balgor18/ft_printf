@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 13:50:31 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/29 17:49:07 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/01/29 21:32:00 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,18 @@ int		main(void)
 	test = ft_printf("meprintf %% test\n");
 	printf("return value = %d \n",test);
 	printf("------------------\n");*/
+	printf("-------- %c10%c test\n",'%','%');
+	printf("reprintf %10% test\n");
+	test = ft_printf("meprintf %10% test\n");
+	printf("return value = %d \n",test);
+	printf("------------------\n");
 	printf("-------- %c%c%c 42\n",'%','0','d');
 	printf("reprintf %0d \n",42);
 	test = ft_printf("meprintf %0d \n",42);
 	printf("return value = %d \n",test);
 	printf("------------------\n");
 	printf("-------- %c%c10%c 42\n",'%','0','d');
-	printf("reprintf %010d \n",42);
+	printf("reprintf %010.10d \n",42);
 	test = ft_printf("meprintf %010d \n",42);
 	printf("return value = %d \n",test);
 	printf("------------------\n");

@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 10:25:28 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/29 18:34:19 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/01/29 21:43:36 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "stdarg.h"
 # include "unistd.h"
 # include <stdlib.h>
+
 /*
 ** A SUPPRIMER
 */
@@ -40,7 +41,7 @@ typedef struct	s_var
 	size_t			total_width;
 	size_t			total_print;
 	char			type;
-	int				ERROR;
+	int				error;
 }				t_var;
 
 /*
@@ -61,6 +62,9 @@ void			ft_putchar(char c);
 void			*ft_memset(void *pointeur, int val, size_t size);
 int				ft_strlennb(char *s, size_t *pos);
 size_t			ft_atoi(char *c);
+char			*ft_itoa(int n);
+char			*ft_strdup(char *src);
+int				ft_strlen(char *c);
 /*
 ** struct
 */
@@ -75,10 +79,14 @@ int				ft_verif_pourcent(char *s, va_list ap, size_t *pos);
 int				ft_verif_isdigit(int c);
 t_var			ft_check_flags(t_var var, char *s, size_t *pos);
 t_var			ft_check_type(t_var var);
-t_var			ft_check_type2(t_var var); // voir si je garde
+t_var			ft_check_type2(t_var var);
+/*
+** manager
+*/
+void			ft_manager(va_list args, t_var var);
 /*
 ** main
 */
-int		ft_printf(const char *str, ...);
+int				ft_printf(const char *str, ...);
 
 #endif

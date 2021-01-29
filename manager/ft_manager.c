@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_init_struct.c                                   :+:      :+:    :+:   */
+/*   ft_manager.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/27 14:34:14 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/29 21:43:53 by fcatinau         ###   ########.fr       */
+/*   Created: 2021/01/29 17:26:31 by fcatinau          #+#    #+#             */
+/*   Updated: 2021/01/29 21:42:30 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-t_var		ft_init_struct(void)
-{
-	t_var st;
+/*
+** voir ce que je fais dedans
+*/
 
-	st.flag.fl_less = 0;
-	st.flag.fl_zero = 0;
-	st.flag.fl_point = 0;
-	st.flag.fl_star = 0;
-	st.total_print = 0;
-	st.total_width = 0;
-	st.type = '0';
-	st.error = 0;
-	return (st);
+void		ft_manager(va_list args, t_var var)
+{
+	(void)args;
+	(void)var;
 }

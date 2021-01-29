@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_init_struct.c                                   :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/27 14:34:14 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/29 21:43:53 by fcatinau         ###   ########.fr       */
+/*   Created: 2021/01/09 22:52:21 by fcatinau          #+#    #+#             */
+/*   Updated: 2021/01/29 21:36:04 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-t_var		ft_init_struct(void)
+char	*ft_strdup(char *src)
 {
-	t_var st;
+	char	*dup;
+	int		len_src;
+	int		i;
 
-	st.flag.fl_less = 0;
-	st.flag.fl_zero = 0;
-	st.flag.fl_point = 0;
-	st.flag.fl_star = 0;
-	st.total_print = 0;
-	st.total_width = 0;
-	st.type = '0';
-	st.error = 0;
-	return (st);
+	i = 0;
+	len_src = ft_strlen(src);
+	if (!(dup = malloc(sizeof(char) * (len_src + 1))))
+		return (0);
+	while (src[i])
+	{
+		dup[i] = src[i];
+		i++;
+	}
+	dup[i] = '\0';
+	return (dup);
 }

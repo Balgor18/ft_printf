@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 15:42:43 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/29 18:41:17 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/01/29 21:43:50 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 t_var		ft_fill_struct(char *s, t_var var, size_t *pos)
 {
 	var = ft_fill_w_and_tp(s, var, pos);
-	if (var.ERROR)
+	if (var.error)
 		return (var);
 	var.type = s[*pos];
 	return (var);
@@ -37,7 +37,7 @@ t_var		ft_fill_w_and_tp(char *s, t_var var, size_t *pos)
 	size_nb = ft_strlennb(s, pos);
 	if (!(nb = malloc(sizeof(char) * (size_nb + 1))))
 	{
-		var.ERROR = 1;
+		var.error = 1;
 		return (var);
 	}
 	nb = ft_fill_nb(s, nb, last);
