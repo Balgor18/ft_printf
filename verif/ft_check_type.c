@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 19:20:03 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/29 17:38:41 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/01/30 12:10:49 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@ t_var		ft_check_type(t_var var)
 		/*Alors je fais un truc */
 	}
 	if (var.type == 'p')
-		ft_putchar(var.type);
+	{
+		/*Alors je fais un truc */
+	}
 	if (var.type == 'd')
 	{
 		//ft_print_int();

@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 13:50:31 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/30 10:18:50 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/01/30 21:39:06 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int		main(void)
 
     printf("\nTYPE FIELDS:\n\n");
 
-	printf("\n\n CHAR AND POURCENT TEST : \n\n");
+	printf("\n CHAR AND POURCENT TEST : \n\n");
 
     printf("%%c Character (%%*%% %%-10c prout, 3, 'c'): \n");
     printf("%*% %-10c prout\n", 3, 'c');
