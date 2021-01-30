@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 10:25:28 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/29 21:43:36 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/01/30 09:46:42 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,11 @@ typedef struct	s_flag
 
 typedef struct	s_var
 {
-	t_flag			flag;
-	size_t			total_width;
-	size_t			total_print;
-	char			type;
-	int				error;
+	t_flag		flag;
+	size_t		total_width;
+	size_t		total_print;
+	char		type;
+	int			error;
 }				t_var;
 
 /*
@@ -73,11 +73,15 @@ t_var			ft_init_struct();
 t_var			ft_fill_w_and_tp(char *s, t_var var, size_t *pos);
 char			*ft_fill_nb(char *s, char *nb, size_t pos);
 /*
+** Flags
+*/
+t_var			flag_star(t_var var, va_list args, char *s, size_t *pos);
+/*
 ** verif
 */
 int				ft_verif_pourcent(char *s, va_list ap, size_t *pos);
 int				ft_verif_isdigit(int c);
-t_var			ft_check_flags(t_var var, char *s, size_t *pos);
+t_var			ft_check_flags(t_var var, char *s, size_t *pos, va_list args);
 t_var			ft_check_type(t_var var);
 t_var			ft_check_type2(t_var var);
 /*

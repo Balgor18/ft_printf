@@ -6,13 +6,13 @@ CFLAGS=-Wall -Wextra -Werror
 
 RM=rm -f
 
-SRC_LIBFT = include_libft/ft_atoi.c\
+SRC_LIBFT = flags/flags.c\
+			include_libft/ft_atoi.c\
 			include_libft/ft_itoa.c\
 			include_libft/ft_memset.c\
 			include_libft/ft_putchar.c\
 			include_libft/ft_strdup.c\
 			include_libft/ft_strlen.c\
-			include_libft/ft_strlennb.c\
 			include_libft/ft_verif_isdigit.c\
 			manager/ft_manager.c\
 			struct/ft_fill_struct.c\
@@ -46,5 +46,9 @@ fclean: clean
 				$(RM) $(NAME)
 
 re: fclean all
+
+norminette:
+				norminette -R CheckForbiddenSourceHeader .
+				norminette -R ChechDefine *.h
 
 .PHONY: clean all fclean re $(NAME)
