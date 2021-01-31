@@ -29,16 +29,14 @@ OBJ_LIBFT = $(SRC_LIBFT:.c=.o)
 
 $(NAME): $(OBJ_LIBFT)
 #ligne du dessous a degager
-				$(CC) -I. $(OBJ_LIBFT) 
-# $(CFLAGS)
+				$(CC) -I. $(OBJ_LIBFT) $(CFLAGS)
 				./a.out
 				make clean
 #				ar rc $(NAME) $(OBJ_LIBFT)
 #				ranlib $(NAME)
 
 %.o: %.c
-				$(CC) -I. -o $@ -c $?
-# $(CFLAGS)
+				$(CC) -I. -o $@ -c $? $(CFLAGS)
 
 all: $(NAME)
 

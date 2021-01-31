@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 13:50:31 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/31 23:08:43 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/01/31 23:24:24 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int		main(void)
 	ft_printf("%-10% prout\n");
 
 	printf("%%c Character (%%10.20%% %%10.20c prout): \n");
-	printf("%10.20% %10.20c prout\n", 'c');// check why not use
+	//printf("%10.20% %10.20c prout\n", 'c');// check why not use
 	ft_printf("%10.20%% %10.20c prout\n", 'c');
 
 
@@ -72,16 +72,16 @@ int		main(void)
 	ft_printf("String test %%10s : %10s prout\n", "Hello");
 	printf("String test %%-10s : %-10s prout\n", "Hello");
 	ft_printf("String test %%-10s : %-10s prout\n", "Hello");
-	//printf("String test %%*s (* is 10) : %*s prout\n", 10, "Hello");
-	//ft_printf("String test %%*s (* is 10) : %*s prout\n", 10, "Hello");
-	//printf("String test %%-*s (* is 10): %-*s prout\n", 10, "Hello");
-	//ft_printf("String test %%-*s (* is 10): %-*s prout\n", 10, "Hello");
+	printf("String test %%*s (* is 10) : %*s prout\n", 10, "Hello");
+	ft_printf("String test %%*s (* is 10) : %*s prout\n", 10, "Hello");
+	printf("String test %%-*s (* is 10): %-*s prout\n", 10, "Hello");
+	ft_printf("String test %%-*s (* is 10): %-*s prout\n", 10, "Hello");
 	//printf("String test %%010s : %010s prout\n", "Hello");// check why not use
 	//ft_printf("String test %%010s : %010s prout\n", "Hello");
 	//printf("String test %%0*s (* is 10) : %0*s prout\n", 10, "Hello");// check why not use
 	//ft_printf("String test %%0*s (* is 10) : %0*s prout\n", 10, "Hello");
-	//printf("String test %%10.4s : %10.4s prout\n", "Hello");
-	//ft_printf("String test %%10.4s : %10.4s prout\n", "Hello");
+	printf("String test %%10.4s : %10.4s prout\n", "Hello");
+	ft_printf("String test %%10.4s : %10.4s prout\n", "Hello");
 	//printf("String test %%10.5s : %10.5s prout\n", "Hello");
 	//ft_printf("String test %%10.5s : %10.5s prout\n", "Hello");
 	//printf("String test %%10.6s : %10.6s prout\n", "Hello");
