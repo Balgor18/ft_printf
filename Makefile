@@ -11,6 +11,7 @@ SRC_LIBFT = flags/flags.c\
 			include_libft/ft_itoa.c\
 			include_libft/ft_memset.c\
 			include_libft/ft_putchar.c\
+			include_libft/ft_putstr.c\
 			include_libft/ft_strdup.c\
 			include_libft/ft_strlen.c\
 			include_libft/ft_verif_isdigit.c\

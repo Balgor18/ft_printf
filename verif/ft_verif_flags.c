@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 16:16:52 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/30 10:11:39 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/01/31 17:53:10 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ int			ft_verif_pourcent(char *s, va_list args, size_t *pos)
 	if (var.error)
 		return (0);
 	ft_manager(args, var);
-	var = ft_check_type(var);
 	return (1);
 }
 
@@ -38,16 +37,20 @@ t_var		ft_check_flags(t_var var, char *s, size_t *pos, va_list args)
 {
 	while (check_type(s[*pos]))
 	{
-		if (s[*pos] == '-')// faire while avec fonction de check is type
+		if (s[*pos] == '-')
+		{
 			var.flag.fl_less = 1;
+			var.flag.fl_zero = 0;
+		}
 		else if (s[*pos] == '0')
 			var.flag.fl_zero = 1;
 		else if (s[*pos] == '.')
 			var.flag.fl_point = 1;
 		else if (s[*pos] == '*')
-			var = flag_star(var, args, s, pos);// check la fonction voir si ses ok 
-		// cas preci a gere printf("prout : %*.*i", 10, 20, 30)
-		// donc si les etoiles prennent la premiere valeur int quil rencontre comme width et total_print
+		{
+			var = flag_star(var, args, s, pos);
+			break ;
+		}
 		*pos = *pos + 1;
 	}
 	return (var);

@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 10:24:32 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/29 21:57:39 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/01/31 17:25:38 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,6 @@ int		ft_printf(const char *str, ...)
 	va_start(args, str);
 	if (!ft_parser((char *)str, args))
 		return (-1);
+	va_end(args);
 	return (0);
 }

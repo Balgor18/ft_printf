@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 13:50:31 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/30 21:39:06 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/01/31 18:03:55 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,34 +29,35 @@
 int		main(void)
 {
 
-    printf("\nTYPE FIELDS:\n\n");
+	printf("\nTYPE FIELDS:\n\n");
 
 	printf("\n CHAR AND POURCENT TEST : \n\n");
 
-    printf("%%c Character (%%*%% %%-10c prout, 3, 'c'): \n");
-    printf("%*% %-10c prout\n", 3, 'c');
-	//ft_printf("%*% %-10c prout\n", 3, 'c');
+	printf("%%c Character (%%*%% %%-10c prout, 3, 'c'): \n");
+	printf("%*% %-10c prout\n", 3, 'c');
+	ft_printf("%*% %-10c prout\n", 3, 'c');
 
-	printf("%%c Character (%%-10%% %%10c prout, 'c'): \n");
+/*	printf("%%c Character (%%-10%% %%10c prout, 'c'): \n");
     printf("%-10% %10c prout\n", 'c');
-	//ft_printf("%-10% %10c prout\n", 'c');
+	ft_printf("%-10% %10c prout\n", 'c');
 
 	printf("%%c Character (%%-*%% %%-*c prout, 'c'): \n");
     printf("%-*% %-*c prout\n", 10, 10, 'c');
-	//ft_printf("%-*% %-*c prout\n", 10, 10, 'c');
+	ft_printf("%-*% %-*c prout\n", 10, 10, 'c');
 
 	printf("%%c Character (%%10.1%% prout): \n");
     printf("%10.1% prout\n");
-	//ft_printf("%10.1% prout\n");
+	ft_printf("%10.1% prout\n");
 
 	printf("%%c Character (%%-10%% prout): \n");
     printf("%-10% prout\n");
-	//ft_printf("%-10% prout\n");
+	ft_printf("%-10% prout\n");
 
 	printf("%%c Character (%%10.20%% %%10.20c prout): \n");
     //printf("%10.20% %10.20c prout\n", 'c');// check why not use
-	//ft_printf("%10.20%% %10.20c prout\n", 'c');
-
+	ft_printf("%10.20%% %10.20c prout\n", 'c');
+*/
+/*
 	char *str = NULL;
 
 	printf("\n\n STRING TEST : \n\n");
@@ -146,7 +147,7 @@ int		main(void)
 	//ft_printf("String test %%*.*i (First * = 20, Second * = 30); %*.*i\n", 20, 30, i);
 
 
-	/*printf("\n\n HEXA TEST :\n\n");
+	printf("\n\n HEXA TEST :\n\n");
 	unsigned int j = 28036591;
 
 	printf("Hexa test %%x : %x \n", j);

@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   flags.c                                            :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/30 09:34:45 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/31 17:37:00 by fcatinau         ###   ########.fr       */
+/*   Created: 2020/09/10 17:27:24 by fcatinau          #+#    #+#             */
+/*   Updated: 2021/01/31 16:46:13 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-t_var	flag_star(t_var var, va_list args, char *s, size_t *pos) // faire un test quand c'est le flag star
+void	ft_putstr(char *str)
 {
-	var.flag.fl_star = 1;
-	var.total_width = (size_t)va_arg(args, int);
-	*pos = *pos + 1;
-	if (s[*pos] == '.')
-	{
-		if (s[*pos + 1] == '*')
-		{
-			var.total_print = (size_t)va_arg(args, int);
-			*pos = *pos + 1;
-		}
-		*pos = *pos + 1;
-	}
-	return (var);
+	int i;
+
+	i = -1;
+	while (str[++i])
+		ft_putchar(str[i]);
 }
