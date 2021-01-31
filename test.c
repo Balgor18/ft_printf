@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 13:50:31 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/31 18:03:55 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/01/31 23:08:43 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,71 +37,71 @@ int		main(void)
 	printf("%*% %-10c prout\n", 3, 'c');
 	ft_printf("%*% %-10c prout\n", 3, 'c');
 
-/*	printf("%%c Character (%%-10%% %%10c prout, 'c'): \n");
-    printf("%-10% %10c prout\n", 'c');
+	printf("%%c Character (%%-10%% %%10c prout, 'c'): \n");
+	printf("%-10% %10c prout\n", 'c');
 	ft_printf("%-10% %10c prout\n", 'c');
 
 	printf("%%c Character (%%-*%% %%-*c prout, 'c'): \n");
-    printf("%-*% %-*c prout\n", 10, 10, 'c');
+	printf("%-*% %-*c prout\n", 10, 10, 'c');
 	ft_printf("%-*% %-*c prout\n", 10, 10, 'c');
 
 	printf("%%c Character (%%10.1%% prout): \n");
-    printf("%10.1% prout\n");
+	printf("%10.1% prout\n");
 	ft_printf("%10.1% prout\n");
 
 	printf("%%c Character (%%-10%% prout): \n");
-    printf("%-10% prout\n");
+	printf("%-10% prout\n");
 	ft_printf("%-10% prout\n");
 
 	printf("%%c Character (%%10.20%% %%10.20c prout): \n");
-    //printf("%10.20% %10.20c prout\n", 'c');// check why not use
+	printf("%10.20% %10.20c prout\n", 'c');// check why not use
 	ft_printf("%10.20%% %10.20c prout\n", 'c');
-*/
-/*
+
+
 	char *str = NULL;
 
 	printf("\n\n STRING TEST : \n\n");
 
 	printf("String test %%s (String is null) : %s prout\n", str);
-	//ft_printf("String test %%s (String is null) : %s prout\n", str);
+	ft_printf("String test %%s (String is null) : %s prout\n", str);
 	printf("String test %%s (String is "") : %s prout\n", "");
-	//ft_printf("String test %%s (String is "") : %s prout\n", "");
+	ft_printf("String test %%s (String is "") : %s prout\n", "");
 	printf("String test %%s : %s prout\n", "Hello");
-	//ft_printf("String test %%s : %s prout\n", "Hello");
+	ft_printf("String test %%s : %s prout\n", "Hello");
 	printf("String test %%10s : %10s prout\n", "Hello");
-	//ft_printf("String test %%10s : %10s prout\n", "Hello");
+	ft_printf("String test %%10s : %10s prout\n", "Hello");
 	printf("String test %%-10s : %-10s prout\n", "Hello");
-	//ft_printf("String test %%-10s : %-10s prout\n", "Hello");
-	printf("String test %%*s (* is 10) : %*s prout\n", 10, "Hello");
+	ft_printf("String test %%-10s : %-10s prout\n", "Hello");
+	//printf("String test %%*s (* is 10) : %*s prout\n", 10, "Hello");
 	//ft_printf("String test %%*s (* is 10) : %*s prout\n", 10, "Hello");
-	printf("String test %%-*s (* is 10): %-*s prout\n", 10, "Hello");
+	//printf("String test %%-*s (* is 10): %-*s prout\n", 10, "Hello");
 	//ft_printf("String test %%-*s (* is 10): %-*s prout\n", 10, "Hello");
 	//printf("String test %%010s : %010s prout\n", "Hello");// check why not use
 	//ft_printf("String test %%010s : %010s prout\n", "Hello");
 	//printf("String test %%0*s (* is 10) : %0*s prout\n", 10, "Hello");// check why not use
 	//ft_printf("String test %%0*s (* is 10) : %0*s prout\n", 10, "Hello");
-	printf("String test %%10.4s : %10.4s prout\n", "Hello");
+	//printf("String test %%10.4s : %10.4s prout\n", "Hello");
 	//ft_printf("String test %%10.4s : %10.4s prout\n", "Hello");
-	printf("String test %%10.5s : %10.5s prout\n", "Hello");
+	//printf("String test %%10.5s : %10.5s prout\n", "Hello");
 	//ft_printf("String test %%10.5s : %10.5s prout\n", "Hello");
-	printf("String test %%10.6s : %10.6s prout\n", "Hello");
+	//printf("String test %%10.6s : %10.6s prout\n", "Hello");
 	//ft_printf("String test %%10.6s : %10.6s prout\n", "Hello");
-	printf("String test %%10.*s (* is -10) : %10.*s prout\n", -10, "Hello");
+	//printf("String test %%10.*s (* is -10) : %10.*s prout\n", -10, "Hello");
 	//ft_printf("String test %%10.*s (* is -10) : %10.*s prout\n", -10, "Hello");
-	printf("String test %%*.4s (* is - 10) : %*.4s prout\n", -10, "Hello");
+	//printf("String test %%*.4s (* is - 10) : %*.4s prout\n", -10, "Hello");
 	//ft_printf("String test %%*.4s (* is - 10) : %*.4s prout\n", -10, "Hello");
 	//printf("String test %%0.4s : %0.4s prout\n", "Hello");// check why not use
 	//ft_printf("String test %%0.4s : %0.4s prout\n", "Hello");
-	printf("String test %%10.0s : %10.0s prout\n", "Hello");
+	//printf("String test %%10.0s : %10.0s prout\n", "Hello");
 	//ft_printf("String test %%10.0s : %10.0s prout\n", "Hello");
-	printf("String test %%*.*s (First * = 10, Second * = 5); %*.*s\n", 10, 5, "Hello");
+	//printf("String test %%*.*s (First * = 10, Second * = 5); %*.*s\n", 10, 5, "Hello");
 	//ft_printf("String test %%*.*s (First * = 10, Second * = 5); %*.*s\n", 10, 5, "Hello");
-	printf("String test %%*.*s (First * = 10, Second * = 1); %*.*s\n", 10, 1, "Hello");
+	//printf("String test %%*.*s (First * = 10, Second * = 1); %*.*s\n", 10, 1, "Hello");
 	//ft_printf("String test %%*.*s (First * = 10, Second * = 1); %*.*s\n", 10, 1, "Hello");
-	printf("String test %%*.*s (First * = 20, Second * = 30); %*.*s\n", 20, 30, "Hello");
+	//printf("String test %%*.*s (First * = 20, Second * = 30); %*.*s\n", 20, 30, "Hello");
 	//ft_printf("String test %%*.*s (First * = 20, Second * = 30); %*.*s\n", 20, 30, "Hello");
 
-
+/*
 	printf("\n\n INTEGER TEST : \n\n");
 	int i = 12345;
 

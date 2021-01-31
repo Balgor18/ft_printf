@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 16:16:52 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/31 17:53:10 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/01/31 22:31:29 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int			ft_verif_pourcent(char *s, va_list args, size_t *pos)
 	var = ft_fill_struct(s, var, pos);
 	if (var.error)
 		return (0);
-	ft_manager(args, var);
+	ft_manager_type(args, var);
 	return (1);
 }
 

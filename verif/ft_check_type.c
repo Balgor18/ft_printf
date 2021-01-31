@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 19:20:03 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/31 18:03:30 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/01/31 22:36:52 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,15 @@
 
 /* affichage */
 /* cas a gerez cspdiuxX% */
-t_var		ft_check_type(t_var var, va_list args)
+t_var		ft_check_type(t_var var, char *args)
 {
 	if (var.type == 'c')
 		ft_putchar(va_arg(args, int));
 	else if (var.type == 's')
+	{
+		printf("putstr = %s\n", va_arg(args, char *));
 		ft_putstr(va_arg(args, char *));
+	}
 	else if (var.type == 'p')
 	{
 		/*Alors je fais un truc */
@@ -30,7 +33,7 @@ t_var		ft_check_type(t_var var, va_list args)
 	return (var);
 }
 
-t_var		ft_check_type2(t_var var, va_list args)
+t_var		ft_check_type2(t_var var, char *args)
 {
 	(void)args;
 

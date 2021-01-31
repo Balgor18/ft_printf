@@ -15,6 +15,8 @@ SRC_LIBFT = flags/flags.c\
 			include_libft/ft_strdup.c\
 			include_libft/ft_strlen.c\
 			include_libft/ft_verif_isdigit.c\
+			manager/ft_manager_char.c\
+			manager/ft_manager_type.c\
 			manager/ft_manager.c\
 			struct/ft_fill_struct.c\
 			struct/ft_init_struct.c\
@@ -27,14 +29,16 @@ OBJ_LIBFT = $(SRC_LIBFT:.c=.o)
 
 $(NAME): $(OBJ_LIBFT)
 #ligne du dessous a degager
-				$(CC) -I. $(OBJ_LIBFT) $(CFLAGS)
+				$(CC) -I. $(OBJ_LIBFT) 
+# $(CFLAGS)
 				./a.out
 				make clean
 #				ar rc $(NAME) $(OBJ_LIBFT)
 #				ranlib $(NAME)
 
 %.o: %.c
-				$(CC) -I. -o $@ -c $? $(CFLAGS)
+				$(CC) -I. -o $@ -c $?
+# $(CFLAGS)
 
 all: $(NAME)
 

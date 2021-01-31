@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 10:25:28 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/31 16:46:25 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/01/31 23:03:42 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,12 +84,14 @@ t_var			flag_star(t_var var, va_list args, char *s, size_t *pos);
 int				ft_verif_pourcent(char *s, va_list ap, size_t *pos);
 int				ft_verif_isdigit(int c);
 t_var			ft_check_flags(t_var var, char *s, size_t *pos, va_list args);
-t_var			ft_check_type(t_var var, va_list args);
-t_var			ft_check_type2(t_var var, va_list args);
+t_var			ft_check_type(t_var var, char *args);
+t_var			ft_check_type2(t_var var, char *args);
 /*
 ** manager
 */
-void			ft_manager(va_list args, t_var var);
+void			ft_manager(char *args, t_var var);
+void			ft_manager_type(va_list args, t_var var);
+void			ft_manager_char(char args, t_var var);
 /*
 ** main
 */
