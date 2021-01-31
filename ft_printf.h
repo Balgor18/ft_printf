@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 10:25:28 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/31 23:03:42 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/01/31 23:57:55 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ char			*ft_itoa(int n);
 char			*ft_strdup(char *src);
 int				ft_strlen(char *c);
 size_t			ft_strlenint(int i);
-void			ft_putstr(char *str);
+void			ft_putstr(char *str, t_var var);
 /*
 ** struct
 */

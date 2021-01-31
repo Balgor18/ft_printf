@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 19:20:03 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/31 22:36:52 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/01/31 23:58:23 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 /* affichage */
 /* cas a gerez cspdiuxX% */
+/*
 t_var		ft_check_type(t_var var, char *args)
 {
 	if (var.type == 'c')
@@ -25,7 +26,6 @@ t_var		ft_check_type(t_var var, char *args)
 	}
 	else if (var.type == 'p')
 	{
-		/*Alors je fais un truc */
 	}
 	else if (var.type == 'd')
 		ft_putstr(ft_itoa(va_arg(args, int)));
@@ -56,4 +56,4 @@ t_var		ft_check_type2(t_var var, char *args)
 	else if (var.type == '%')
 		ft_putchar(var.type);
 	return (var);
-}
+}*/
