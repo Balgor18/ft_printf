@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_manager_type.c                                  :+:      :+:    :+:   */
+/*   ft_fill_nb.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/31 22:32:15 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/01 21:54:28 by fcatinau         ###   ########.fr       */
+/*   Created: 2021/02/01 16:09:02 by fcatinau          #+#    #+#             */
+/*   Updated: 2021/02/01 16:09:02 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_manager_type(va_list args, t_var var)
+char		*ft_fill_nb(char *s, char *nb, size_t last)
 {
-	if (var.type == 'c')
-		ft_manager_char(va_arg(args, int), var);// args sera mtn egale a un str
-	else if (var.type == 's')
-		ft_manager(va_arg(args, char *), var);// args sera mtn egale a un str
-	else if (var.type == 'i')
+	size_t	i;
+
+	i = 0;
+	while (ft_verif_isdigit(s[last]))
 	{
-		var.total_print = -1;
-		ft_manager(ft_itoa(va_arg(args, int)), var);
+		nb[i] = s[last];
+		last++;
+		i++;
 	}
-	else if (var.type == '%')
-		ft_manager_char('%', var);
+	nb[i] = '\0';
+	return (nb);
 }

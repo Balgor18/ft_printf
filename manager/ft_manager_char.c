@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/31 22:58:10 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/31 23:02:47 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/01 18:27:21 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 t_var		w_and_tp_char(t_var var)
 {
-	size_t	i;
+	int		i;
 	char	print;
-	size_t	size_type;
+	int		size_type;
 
 	size_type = 1;
 	print = ' ';

@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 10:25:28 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/31 23:57:55 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/01 18:26:58 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ typedef struct	s_flag
 typedef struct	s_var
 {
 	t_flag		flag;
-	size_t		total_width;
-	size_t		total_print;
+	int			total_width;
+	int			total_print;
 	char		type;
 	int			error;
 }				t_var;
@@ -70,10 +70,11 @@ void			ft_putstr(char *str, t_var var);
 /*
 ** struct
 */
-t_var			ft_fill_struct(char *s, t_var var, size_t *pos);
+t_var			ft_fill_w(char *s, t_var var, size_t *pos, va_list args);
+t_var			ft_fill_struct(char *s, t_var var, size_t *pos, va_list args);
 t_var			ft_init_struct();
-t_var			ft_fill_w_and_tp(char *s, t_var var, size_t *pos);
 char			*ft_fill_nb(char *s, char *nb, size_t pos);
+t_var			ft_fill_tp(char *s, t_var var, size_t *pos, va_list args);
 /*
 ** Flags
 */

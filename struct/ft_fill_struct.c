@@ -6,29 +6,34 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 15:42:43 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/31 18:41:06 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/01 21:42:52 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-/*
-** verif car le while n'est pas bon donc je pense
-** mettre dans un char * qui est malloc donc free derriere mais d'abord
-** faire un strlen special pour les digit
-*/
-
-t_var		ft_fill_struct(char *s, t_var var, size_t *pos)
+t_var		ft_fill_struct(char *s, t_var var, size_t *pos, va_list args)
 {
-	if (var.total_width == 0 && var.total_print == 0)
-		var = ft_fill_w_and_tp(s, var, pos);
+	if (var.total_width <= 0 && var.total_print <= 0)
+		var = ft_fill_w(s, var, pos, args);
 	if (var.error)
 		return (var);
 	var.type = s[*pos];
 	return (var);
 }
 
-t_var		ft_fill_w_and_tp(char *s, t_var var, size_t *pos)
+t_var		ft_tp_is_star(t_var var, va_list args, size_t *pos)
+{
+	int i;
+
+	*pos = *pos + 1;
+	i = va_arg(args, int);
+	if (i > 0)
+		var.total_print = i;
+	return (var);
+}
+
+t_var		ft_fill_w(char *s, t_var var, size_t *pos, va_list args)
 {
 	char	*nb;
 	size_t	size_nb;
@@ -43,31 +48,34 @@ t_var		ft_fill_w_and_tp(char *s, t_var var, size_t *pos)
 	}
 	nb = ft_fill_nb(s, nb, last);
 	var.total_width = ft_atoi(nb);
-	ft_memset(nb, 0, size_nb);
-	size_nb = 0;
-	if (s[*pos] == '.')
-	{
-		*pos = *pos + 1;
-		last = *pos;
-		size_nb = ft_strlennb(s, pos);
-		nb = ft_fill_nb(s, nb, last);
-		var.total_print = ft_atoi(nb);
-	}
 	free(nb);
+	if (s[*pos] == '.')
+		var = ft_fill_tp(s, var, pos, args);
 	return (var);
 }
 
-char		*ft_fill_nb(char *s, char *nb, size_t last)
+t_var		ft_fill_tp(char *s, t_var var, size_t *pos, va_list args)
 {
-	size_t	i;
+	size_t	last;
+	size_t	size_nb;
+	char	*nb;
 
-	i = 0;
-	while (ft_verif_isdigit(s[last]))
+	if (!ft_verif_isdigit(s[*pos]))
+		*pos = *pos + 1;
+	last = *pos;
+	size_nb = ft_strlennb(s, pos);
+	if (s[*pos] == '*')
+		var = ft_tp_is_star(var, args, pos);
+	else
 	{
-		nb[i] = s[last];
-		last++;
-		i++;
+		if (!(nb = malloc(sizeof(char) * (size_nb + 1))))
+		{
+			var.error = 1;
+			return (var);
+		}
+		nb = ft_fill_nb(s, nb, last);
+		var.total_print = ft_atoi(nb);
+		free(nb);
 	}
-	nb[i] = '\0';
-	return (nb);
+	return (var);
 }

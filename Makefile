@@ -18,6 +18,7 @@ SRC_LIBFT = flags/flags.c\
 			manager/ft_manager_char.c\
 			manager/ft_manager_type.c\
 			manager/ft_manager.c\
+			struct/ft_fill_nb.c\
 			struct/ft_fill_struct.c\
 			struct/ft_init_struct.c\
 			verif/ft_verif_flags.c\
