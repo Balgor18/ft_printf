@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 10:25:28 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/01 18:26:58 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/02 21:08:11 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ char			*ft_strdup(char *src);
 int				ft_strlen(char *c);
 size_t			ft_strlenint(int i);
 void			ft_putstr(char *str, t_var var);
+char			zero_or_space(t_var var);
 /*
 ** struct
 */
@@ -93,6 +94,7 @@ t_var			ft_check_type2(t_var var, char *args);
 void			ft_manager(char *args, t_var var);
 void			ft_manager_type(va_list args, t_var var);
 void			ft_manager_char(char args, t_var var);
+void			ft_manager_int(char *str, t_var var);
 /*
 ** main
 */

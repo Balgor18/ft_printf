@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 13:50:31 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/01 21:53:18 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/02 21:31:55 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,44 +106,44 @@ int		main(void)
 	printf("\n\n INTEGER TEST : \n\n");
 	int i = 12345;
 
-	//printf("String test %%i (i is 0) : %i prout\n", 0);
-	//ft_printf("String test %%i (i is 0) : %i prout\n", 0);
+	printf("String test %%i (i is 0) : %i prout\n", 0);
+	ft_printf("String test %%i (i is 0) : %i prout\n", 0);
 	//printf("String test %%i (i is INT_MIN) : %i prout\n", -2147483648);// check why not use
 	//ft_printf("String test %%i (i is INT_MIN) : %i prout\n", -2147483648);
-	//printf("String test %%i (i is INT_MAX) : %i prout\n", 2147483647);
-	//ft_printf("String test %%i (i is INT_MAX) : %i prout\n", 2147483647);
-	//printf("String test %%i : %i prout\n", i);
-	//ft_printf("String test %%i : %i prout\n", i);
-	//printf("String test %%10i : %10i prout\n", i);
-	//ft_printf("String test %%10i : %10i prout\n", i);
-	//printf("String test %%-10i : %-10i prout\n", i);
-	//ft_printf("String test %%-10i : %-10i prout\n", i);
-	//printf("String test %%*i (* is 10) : %*i prout\n", 10, i);
-	//ft_printf("String test %%*i (* is 10) : %*i prout\n", 10, i);
-	//printf("String test %%-*i (* is 10): %-*i prout\n", 10, i);
-	//ft_printf("String test %%-*i (* is 10): %-*i prout\n", 10, i);
-	//printf("String test %%010i : %010i prout\n", i);
-	//ft_printf("String test %%010i : %010i prout\n", i);
-	//printf("String test %%0*i (* is 10) : %0*i prout\n", 10, i);
-	//ft_printf("String test %%0*i (* is 10) : %0*i prout\n", 10, i);
-	//printf("String test %%10.4i : %10.4i prout\n", i);
-	//ft_printf("String test %%10.4i : %10.4i prout\n", i);
-	//printf("String test %%10.5i : %10.5i prout\n", i);
-	//ft_printf("String test %%10.5i : %10.5i prout\n", i);
+	printf("String test %%i (i is INT_MAX) : %i prout\n", 2147483647);
+	ft_printf("String test %%i (i is INT_MAX) : %i prout\n", 2147483647);
+	printf("String test %%i : %i prout\n", i);
+	ft_printf("String test %%i : %i prout\n", i);
+	printf("String test %%10i : %10i prout\n", i);
+	ft_printf("String test %%10i : %10i prout\n", i);
+	printf("String test %%-10i : %-10i prout\n", i);
+	ft_printf("String test %%-10i : %-10i prout\n", i);
+	printf("String test %%*i (* is 10) : %*i prout\n", 10, i);
+	ft_printf("String test %%*i (* is 10) : %*i prout\n", 10, i);
+	printf("String test %%-*i (* is 10): %-*i prout\n", 10, i);
+	ft_printf("String test %%-*i (* is 10): %-*i prout\n", 10, i);
+	printf("String test %%010i : %010i prout\n", i);
+	ft_printf("String test %%010i : %010i prout\n", i);
+	printf("String test %%0*i (* is 10) : %0*i prout\n", 10, i);
+	ft_printf("String test %%0*i (* is 10) : %0*i prout\n", 10, i);
+	printf("String test %%10.4i : %10.4i prout\n", i);
+	ft_printf("String test %%10.4i : %10.4i prout\n", i);
+	printf("String test %%10.5i : %10.5i prout\n", i);
+	ft_printf("String test %%10.5i : %10.5i prout\n", i);
 	printf("String test %%10.6i : %10.6i prout\n", i);
 	ft_printf("String test %%10.6i : %10.6i prout\n", i);
-	//printf("String test %%10.*i (* is -10) : %10.*i prout\n", -10, i);
-	//ft_printf("String test %%10.*i (* is -10) : %10.*i prout\n", -10, i);
-	//printf("String test %%*.4i (* is - 10) : %*.4i prout\n", -10, i);
-	//ft_printf("String test %%*.4i (* is - 10) : %*.4i prout\n", -10, i);
-	//printf("String test %%0.4i : %0.4i prout\n", i);
-	//ft_printf("String test %%0.4i : %0.4i prout\n", i);
-	//printf("String test %%10.0i : %10.0i prout\n", i);
-	//ft_printf("String test %%10.0i : %10.0i prout\n", i);
-	//printf("String test %%*.*i (First * = 10, Second * = 5); %*.*i\n", 10, 5, i);
-	//ft_printf("String test %%*.*i (First * = 10, Second * = 5); %*.*i\n", 10, 5, i);
-	//printf("String test %%*.*i (First * = 10, Second * = 1); %*.*i\n", 10, 1, i);
-	//ft_printf("String test %%*.*i (First * = 10, Second * = 1); %*.*i\n", 10, 1, i);
+	printf("String test %%10.*i (* is -10) : %10.*i prout\n", -10, i);
+	ft_printf("String test %%10.*i (* is -10) : %10.*i prout\n", -10, i);
+	printf("String test %%*.4i (* is - 10) : %*.4i prout\n", -10, i);
+	ft_printf("String test %%*.4i (* is - 10) : %*.4i prout\n", -10, i);
+	printf("String test %%0.4i : %0.4i prout\n", i);
+	ft_printf("String test %%0.4i : %0.4i prout\n", i);
+	printf("String test %%10.0i : %10.0i prout\n", i);
+	ft_printf("String test %%10.0i : %10.0i prout\n", i);
+	printf("String test %%*.*i (First * = 10, Second * = 5); %*.*i\n", 10, 5, i);
+	ft_printf("String test %%*.*i (First * = 10, Second * = 5); %*.*i\n", 10, 5, i);
+	printf("String test %%*.*i (First * = 10, Second * = 1); %*.*i\n", 10, 1, i);
+	ft_printf("String test %%*.*i (First * = 10, Second * = 1); %*.*i\n", 10, 1, i);
 	printf("String test %%*.*i (First * = 20, Second * = 30); %*.*i\n", 20, 30, i);
 	ft_printf("String test %%*.*i (First * = 20, Second * = 30); %*.*i\n", 20, 30, i);
 
@@ -292,6 +292,7 @@ printf("\nWITH J = 4123456789\n");
     printf("%x\n", 10);
     printf("%%X Hexadecimal unsigned int in upper-case (%%X, 10): ");
     printf("%X\n", 10);
+
     //FLAGS
     printf("\n\nFLAGS:\n");
     printf("* Width field (%%*d, 5, 10): ");
@@ -309,10 +310,3 @@ printf("\nWITH J = 4123456789\n");
 */
     return (0);
 }
-
-/*
-** 	printf("%#x\n", 17);
-** 	printf("%#X\n", 17);
-** 	printf("%#f\n", 1.42);
-** 	printf("%#A\n", 1.42);
-*/
