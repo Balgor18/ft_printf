@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/01 22:20:29 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/02 21:29:58 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/03 12:18:30 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void		print_widthint(t_var var, char *str)
 		while(var.total_width >= (++i + ft_strlen(str)))
 			ft_putchar(zero_or_space(var));
 }
-void	ft_putstrint(char *str, t_var var)
+void		ft_putstrint(char *str, t_var var)
 {
 	int i;
 

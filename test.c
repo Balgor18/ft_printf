@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 13:50:31 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/02 21:31:55 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/03 13:34:08 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int		main(void)
 	printf("\nTYPE FIELDS:\n\n");
 
 	printf("\n CHAR AND POURCENT TEST : \n\n");
-/*
+
 	printf("%%c Character (%%*%% %%-10c prout, 3, 'c'): \n");
 	printf("%*% %-10c prout\n", 3, 'c');
 	ft_printf("%*% %-10c prout\n", 3, 'c');
@@ -101,7 +101,6 @@ int		main(void)
 	ft_printf("String test %%*.*s (First * = 10, Second * = 1); %*.*s\n", 10, 1, "Hello");
 	printf("String test %%*.*s (First * = 20, Second * = 30); %*.*s\n", 20, 30, "Hello");
 	ft_printf("String test %%*.*s (First * = 20, Second * = 30); %*.*s\n", 20, 30, "Hello");
-*/
 
 	printf("\n\n INTEGER TEST : \n\n");
 	int i = 12345;
@@ -147,37 +146,38 @@ int		main(void)
 	printf("String test %%*.*i (First * = 20, Second * = 30); %*.*i\n", 20, 30, i);
 	ft_printf("String test %%*.*i (First * = 20, Second * = 30); %*.*i\n", 20, 30, i);
 
-/*
+
 	printf("\n\n HEXA TEST :\n\n");
 	unsigned int j = 28036591;
 
 	printf("Hexa test %%x : %x \n", j);
-	//ft_printf("Hexa test %%x : %x \n", j);
+	ft_printf("Hexa test %%x : %x \n", j);
 	printf("Hexa test %%10x : %10x \n", j);
-	//ft_printf("Hexa test %%10x : %10x \n", j);
+	ft_printf("Hexa test %%10x : %10x \n", j);
 	printf("Hexa test %%-10x : %-10x \n", j);
-	//ft_printf("Hexa test %%-10x : %-10x \n", j);
+	ft_printf("Hexa test %%-10x : %-10x \n", j);
 	printf("Hexa test %%010x : %010x \n", j);
-	//ft_printf("Hexa test %%010x : %010x \n", j);
+	ft_printf("Hexa test %%010x : %010x \n", j);
 	printf("Hexa test %%30.15x : %30.15x \n", j);
-	//ft_printf("Hexa test %%30.15x : %30.15x \n", j);
+	ft_printf("Hexa test %%30.15x : %30.15x \n", j);
 	printf("Hexa test %%30.16x : %30.16x \n", j);
-	//ft_printf("Hexa test %%30.16x : %30.16x \n", j);
+	ft_printf("Hexa test %%30.16x : %30.16x \n", j);
 	printf("Hexa test %%30.17x : %30.17x \n", j);
-	//ft_printf("Hexa test %%30.17x : %30.17x \n", j);
+	ft_printf("Hexa test %%30.17x : %30.17x \n", j);
 	printf("Hexa test %%30.18x : %30.18x \n", j);
-	//ft_printf("Hexa test %%30.18x : %30.18x \n", j);
+	ft_printf("Hexa test %%30.18x : %30.18x \n", j);
 	printf("Hexa test %%*.17x (* is 30) : %*.17x \n", 30, j);
-	//ft_printf("Hexa test %%*.17x (* is 30) : %*.17x \n", 30, j);
+	ft_printf("Hexa test %%*.17x (* is 30) : %*.17x \n", 30, j);
 	printf("Hexa test %%30.*x (* is 17) : %30.*x \n", 17, j);
-	//ft_printf("Hexa test %%30.*x (* is 17) : %30.*x \n", 17, j);
+	ft_printf("Hexa test %%30.*x (* is 17) : %30.*x \n", 17, j);
 	printf("Hexa test %%*.*x (* is 30 and 17) : %*.*x \n", 30, 17, j);
-	//ft_printf("Hexa test %%*.*x (* is 30 and 17) : %*.*x \n", 30, 17, j);
+	ft_printf("Hexa test %%*.*x (* is 30 and 17) : %*.*x \n", 30, 17, j);
 	printf("Hexa test %%*.*x (* is 30 and -17) : %*.*x \n", 30, -17, j);
-	//ft_printf("Hexa test %%*.*x (* is 30 and -17) : %*.*x \n", 30, -17, j);
+	ft_printf("Hexa test %%*.*x (* is 30 and -17) : %*.*x \n", 30, -17, j);
 	printf("Hexa test %%*.*x (* is 30 and 40) : %*.*x \n", 30, 40, j);
-	//ft_printf("Hexa test %%*.*x (* is 30 and 40) : %*.*x \n", 30, 40, j);
+	ft_printf("Hexa test %%*.*x (* is 30 and 40) : %*.*x \n", 30, 40, j);
 
+/*
 
 	printf("\n\n HEXA CAPSED TEST :\n\n");
 

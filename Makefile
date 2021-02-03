@@ -8,6 +8,7 @@ RM=rm -f
 
 SRC_LIBFT = flags/flags.c\
 			include_libft/ft_atoi.c\
+			include_libft/ft_itoa_base.c\
 			include_libft/ft_itoa.c\
 			include_libft/ft_memset.c\
 			include_libft/ft_putchar.c\
@@ -16,6 +17,7 @@ SRC_LIBFT = flags/flags.c\
 			include_libft/ft_strlen.c\
 			include_libft/ft_verif_isdigit.c\
 			manager/ft_manager_char.c\
+			manager/ft_manager_hexa.c\
 			manager/ft_manager_int.c\
 			manager/ft_manager_type.c\
 			manager/ft_manager.c\

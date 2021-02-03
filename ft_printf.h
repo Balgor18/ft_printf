@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 10:25:28 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/02 21:08:11 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/03 12:18:53 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ int				ft_strlen(char *c);
 size_t			ft_strlenint(int i);
 void			ft_putstr(char *str, t_var var);
 char			zero_or_space(t_var var);
+char			*ft_hex_base(unsigned long long nbr);
 /*
 ** struct
 */
@@ -80,6 +81,12 @@ t_var			ft_fill_tp(char *s, t_var var, size_t *pos, va_list args);
 ** Flags
 */
 t_var			flag_star(t_var var, va_list args, char *s, size_t *pos);
+/*
+** printf
+*/
+t_var			witdh_and_total_print(t_var var, char* args);
+void			print_widthint(t_var var, char *str);
+void			ft_putstrint(char *str, t_var var);
 /*
 ** verif
 */
@@ -95,6 +102,7 @@ void			ft_manager(char *args, t_var var);
 void			ft_manager_type(va_list args, t_var var);
 void			ft_manager_char(char args, t_var var);
 void			ft_manager_int(char *str, t_var var);
+void			ft_manager_hexa(char *str, t_var var);
 /*
 ** main
 */

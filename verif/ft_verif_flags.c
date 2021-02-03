@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 16:16:52 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/01 20:37:44 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/03 13:20:15 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,9 @@ int			ft_verif_pourcent(char *s, va_list args, size_t *pos)
 	*pos = *pos + 1;
 	var = ft_init_struct();
 	var = ft_check_flags(var, s, pos, args);
-//	printf("%d = %d || s[*pos] = %c\n",var.total_print, var.total_width, s[*pos]);
-//	printf("\n*pos = %zu\n ", *pos);
 	var = ft_fill_struct(s, var, pos, args);
 	if (var.error)
 		return (0);
-/*
-	printf("\nvar.flag.fl_less %d \n",var.flag.fl_less);
-	printf("var.flag.fl_point %d \n",var.flag.fl_point);
-	printf("var.flag.fl_star %d \n",var.flag.fl_star);
-	printf("var.flag.fl_zero %d \n",var.flag.fl_zero);
-	printf("var.total_print %d \n", var.total_print);
-	printf("var.total_width %d \n",var.total_width);
-	printf("var.type %c\n", var.type);
-*/
 	ft_manager_type(args, var);
 	return (1);
 }

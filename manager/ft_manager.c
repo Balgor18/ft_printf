@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 17:26:31 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/01 22:20:08 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/03 13:33:19 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,11 @@ t_var		witdh_and_total_print(t_var var, char* args)
 	int		i;
 	int		size_type;
 
+	i = 0;
 	size_type = ft_size_by_type(args);
 	if (var.total_print >= 0)
 		var.total_width = var.total_width + diff_tp_real_size(args, var);
-	i = 0;
-	while (var.total_width > (i + size_type) && var.total_width >= var.total_print)
+	while (var.total_width > (i + size_type) )//&& var.total_width >= var.total_print)
 	{
 		ft_putchar(zero_or_space(var));
 		i++;
