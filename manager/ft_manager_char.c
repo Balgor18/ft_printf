@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/31 22:58:10 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/01 18:27:21 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/03 19:06:24 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,36 +22,31 @@ t_var		w_and_tp_char(t_var var)
 	print = ' ';
 	if (var.flag.fl_zero)
 		print = '0';
-	i = 0;
-	if ((var.total_print < var.total_width))
-	{
-		while (var.total_width != (i + size_type))
-		{
-			ft_putchar(print);
-			i++;
-		}
-	}
-	else
-		while (var.total_print != (i + size_type))
-		{
-			ft_putchar(print);
-			i++;
-		}
+	i = -1;
+	while (var.total_width > (++i + size_type))
+		ft_putchar(print);
+	var.write_char = var.write_char + i;
 	return (var);
 }
 
-void		ft_manager_char(char args, t_var var)
+t_var		ft_manager_char(char args, t_var var)
 {
+	
+	if (var.total_print > 0)
+		var.total_print = -1;
 	if (var.flag.fl_less)
 	{
 		ft_putchar(args);
 		if (var.total_width > 0)
-			w_and_tp_char(var);
+			var = w_and_tp_char(var);
 	}
 	else
 	{
 		if (var.total_width > 0)
-			w_and_tp_char(var);
+			var = w_and_tp_char(var);
 		ft_putchar(args);
 	}
+	var.write_char = var.write_char + 1;
+	//printf("apres manager char var.write_char %d \n",var.write_char);
+	return (var);
 }

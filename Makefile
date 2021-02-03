@@ -27,19 +27,19 @@ SRC_LIBFT = flags/flags.c\
 			struct/ft_fill_struct.c\
 			struct/ft_init_struct.c\
 			verif/ft_verif_flags.c\
-			verif/ft_check_type.c\
-			ft_printf.c\
-			test.c
+			ft_printf.c
+#\
+#			test.c
 
 OBJ_LIBFT = $(SRC_LIBFT:.c=.o)
 
 $(NAME): $(OBJ_LIBFT)
 #ligne du dessous a degager
-				$(CC) -I. $(OBJ_LIBFT) $(CFLAGS)
-				./a.out
-				make clean
-#				ar rc $(NAME) $(OBJ_LIBFT)
-#				ranlib $(NAME)
+#				$(CC) -I. $(OBJ_LIBFT) $(CFLAGS)
+#				./a.out
+#				make clean
+				ar rc $(NAME) $(OBJ_LIBFT)
+				ranlib $(NAME)
 
 %.o: %.c
 				$(CC) -I. -o $@ -c $? $(CFLAGS)
@@ -48,16 +48,11 @@ all: $(NAME)
 
 clean:
 				$(RM) $(OBJ_LIBFT)
-				$(RM) a.out
-#ligne du dessus a suppr
+#				$(RM) a.out
 
 fclean: clean
 				$(RM) $(NAME)
 
 re: fclean all
-
-norme:
-				norminette -R CheckForbiddenSourceHeader .
-				norminette -R ChechDefine *.h
 
 .PHONY: clean all fclean re $(NAME)

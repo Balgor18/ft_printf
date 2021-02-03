@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/01 22:20:29 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/03 15:28:21 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/03 18:24:47 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int			is_sup_str(t_var var, char *str)
 	return (0);
 }
 
-void		print_widthint(t_var var, char *str)
+t_var		print_widthint(t_var var, char *str)
 {
 	int i;
 
@@ -46,32 +46,39 @@ void		print_widthint(t_var var, char *str)
 	else
 		while(var.total_width >= (++i + ft_strlen(str)))
 			ft_putchar(zero_or_space(var));
+	var.write_char = var.write_char + i;
+	return (var);
 }
-void		ft_putstrint(char *str, t_var var)
+
+t_var		ft_putstrint(char *str, t_var var)
 {
 	int i;
 
 	i= -1;
 	while(var.total_print > (++i + ft_strlen(str)))
 		ft_putchar('0');
+	var.write_char = var.write_char + i;
 	i = -1;
 	while (str[++i])
 		ft_putchar(str[i]);
+	var.write_char = var.write_char + i;
+	return (var);
 }
 
-void		ft_manager_int(char *str, t_var var)
+t_var		ft_manager_int(char *str, t_var var)
 {
 	if (var.flag.fl_less)
 	{
-		ft_putstrint(str, var);
+		var = ft_putstrint(str, var);
 		if (var.total_width > 0)
-			print_widthint(var, str);
+			var = print_widthint(var, str);
 	}
 	else
 	{
 		if (var.total_width > 0)
-			print_widthint(var, str);
-		ft_putstrint(str, var);
+			var = print_widthint(var, str);
+		var = ft_putstrint(str, var);
 	}
 	free(str);
+	return (var);
 }

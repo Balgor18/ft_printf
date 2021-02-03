@@ -6,14 +6,15 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 15:31:21 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/03 15:36:37 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/03 17:53:27 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void		ft_manager_uns_int(char *str,t_var var)
+t_var		ft_manager_uns_int(char *str,t_var var)
 {
+	var.write_char = var.write_char + ft_strlen(str);
 	if (var.total_print > 0 && var.flag.fl_less)
 	{
 		var.total_print = -1;
@@ -32,4 +33,5 @@ void		ft_manager_uns_int(char *str,t_var var)
 		ft_putstrint(str, var);
 	}
 	free(str);
+	return (var);
 }

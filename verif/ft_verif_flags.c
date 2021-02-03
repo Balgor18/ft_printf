@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 16:16:52 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/03 13:20:15 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/03 19:02:01 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,23 +19,21 @@ int			check_type(char c)
 	return (0);
 }
 
-int			ft_verif_pourcent(char *s, va_list args, size_t *pos)
+t_var			ft_verif_pourcent(char *s, va_list args, size_t *pos, t_var var)
 {
-	t_var	var;
-
 	*pos = *pos + 1;
-	var = ft_init_struct();
+	var = ft_init_struct(var);
 	var = ft_check_flags(var, s, pos, args);
 	var = ft_fill_struct(s, var, pos, args);
 	if (var.error)
-		return (0);
-	ft_manager_type(args, var);
-	return (1);
+		return (var);
+	var = ft_manager_type(args, var);
+	return (var);
 }
 
 t_var		ft_check_flags(t_var var, char *s, size_t *pos, va_list args)
 {
-	while (check_type(s[*pos]))
+	while (check_type(s[*pos]))//&& !check_type(s[*pos + 1]))
 	{
 		if (s[*pos] == '-')
 		{
