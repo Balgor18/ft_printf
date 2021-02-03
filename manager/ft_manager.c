@@ -6,15 +6,12 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 17:26:31 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/03 13:33:19 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/03 14:25:32 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-/*
-** voir ce que je fais dedans
-*/
 size_t		diff_tp_real_size(char *s, t_var var)
 {
 	size_t len;

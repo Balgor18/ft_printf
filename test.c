@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 13:50:31 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/03 13:34:08 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/03 15:34:52 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int		main(void)
 {
 
 	printf("\nTYPE FIELDS:\n\n");
-
+/*
 	printf("\n CHAR AND POURCENT TEST : \n\n");
 
 	printf("%%c Character (%%*%% %%-10c prout, 3, 'c'): \n");
@@ -177,77 +177,76 @@ int		main(void)
 	printf("Hexa test %%*.*x (* is 30 and 40) : %*.*x \n", 30, 40, j);
 	ft_printf("Hexa test %%*.*x (* is 30 and 40) : %*.*x \n", 30, 40, j);
 
-/*
 
 	printf("\n\n HEXA CAPSED TEST :\n\n");
 
+	unsigned int j = 28036591;
 	printf("Hexa test %%X : %X \n", j);
-	//ft_printf("Hexa test %%X : %X \n", j);
+	ft_printf("Hexa test %%X : %X \n", j);
 	printf("Hexa test %%10X : %10X \n", j);
-	//ft_printf("Hexa test %%10X : %10X \n", j);
+	ft_printf("Hexa test %%10X : %10X \n", j);
 	printf("Hexa test %%-10X : %-10X \n", j);
-	//ft_printf("Hexa test %%-10X : %-10X \n", j);
+	ft_printf("Hexa test %%-10X : %-10X \n", j);
 	printf("Hexa test %%010X : %010X \n", j);
-	//ft_printf("Hexa test %%010X : %010X \n", j);
+	ft_printf("Hexa test %%010X : %010X \n", j);
 	printf("Hexa test %%30.15X : %30.15X \n", j);
-	//ft_printf("Hexa test %%30.15X : %30.15X \n", j);
+	ft_printf("Hexa test %%30.15X : %30.15X \n", j);
 	printf("Hexa test %%30.16X : %30.16X \n", j);
-	//ft_printf("Hexa test %%30.16X : %30.16X \n", j);
+	ft_printf("Hexa test %%30.16X : %30.16X \n", j);
 	printf("Hexa test %%30.17X : %30.17X \n", j);
-	//ft_printf("Hexa test %%30.17X : %30.17X \n", j);
+	ft_printf("Hexa test %%30.17X : %30.17X \n", j);
 	printf("Hexa test %%30.18X : %30.18X \n", j);
-	//ft_printf("Hexa test %%30.18X : %30.18X \n", j);
+	ft_printf("Hexa test %%30.18X : %30.18X \n", j);
 	printf("Hexa test %%*.17X (* is 30) : %*.17X \n", 30, j);
-	//ft_printf("Hexa test %%*.17X (* is 30) : %*.17X \n", 30, j);
+	ft_printf("Hexa test %%*.17X (* is 30) : %*.17X \n", 30, j);
 	printf("Hexa test %%30.*X (* is 17) : %30.*X \n", 17, j);
-	//ft_printf("Hexa test %%30.*X (* is 17) : %30.*X \n", 17, j);
+	ft_printf("Hexa test %%30.*X (* is 17) : %30.*X \n", 17, j);
 	printf("Hexa test %%*.*X (* is 30 and 17) : %*.*X \n", 30, 17, j);
-	//ft_printf("Hexa test %%*.*X (* is 30 and 17) : %*.*X \n", 30, 17, j);
+	ft_printf("Hexa test %%*.*X (* is 30 and 17) : %*.*X \n", 30, 17, j);
 	printf("Hexa test %%*.*X (* is 30 and -17) : %*.*X \n", 30, -17, j);
-	//ft_printf("Hexa test %%*.*X (* is 30 and -17) : %*.*X \n", 30, -17, j);
+	ft_printf("Hexa test %%*.*X (* is 30 and -17) : %*.*X \n", 30, -17, j);
 	printf("Hexa test %%*.*X (* is 30 and 40) : %*.*X \n", 30, 40, j);
-	//ft_printf("Hexa test %%*.*X (* is 30 and 40) : %*.*X \n", 30, 40, j);
+	ft_printf("Hexa test %%*.*X (* is 30 and 40) : %*.*X \n", 30, 40, j);
 
 	j = UINT_MAX;
 	printf("Hexa test %%*.*X (* is 30 and 40) : %*.*X \n", 30, 40, j);
-	//ft_printf("Hexa test %%*.*X (* is 30 and 40) : %*.*X \n", 30, 40, j);
-
-
+	ft_printf("Hexa test %%*.*X (* is 30 and 40) : %*.*X \n", 30, 40, j);
+*/
 
 
 
 	printf("\n\n UNSIGNED INTEGER TEST :\n\n");
 
-printf("\nWITH J = 4123456789\n");
-	j = 4123456789;
+	printf("\nWITH J = 4123456789\n");
+	unsigned int j = 4123456789;
 
 	printf("Unsigned int test %%u : %u \n", j);
-	//ft_printf("Unsigned int test %%u : %u \n", j);
+	ft_printf("Unsigned int test %%u : %u \n", j);
 	printf("Unsigned int test %%10u : %10u \n", j);
-	//ft_printf("Unsigned int test %%10u : %10u \n", j);
+	ft_printf("Unsigned int test %%10u : %10u \n", j);
 	printf("Unsigned int test %%-10u : %-10u \n", j);
-	//ft_printf("Unsigned int test %%-10u : %-10u \n", j);
+	ft_printf("Unsigned int test %%-10u : %-10u \n", j);
 	printf("Unsigned int test %%010u : %010u \n", j);
-	//ft_printf("Unsigned int test %%010u : %010u \n", j);
+	ft_printf("Unsigned int test %%010u : %010u \n", j);
 	printf("Unsigned int test %%30.15u : %30.15u \n", j);
-	//ft_printf("Unsigned int test %%30.15u : %30.15u \n", j);
+	ft_printf("Unsigned int test %%30.15u : %30.15u \n", j);
 	printf("Unsigned int test %%30.16u : %30.16u \n", j);
-	//ft_printf("Unsigned int test %%30.16u : %30.16u \n", j);
+	ft_printf("Unsigned int test %%30.16u : %30.16u \n", j);
 	printf("Unsigned int test %%30.17u : %30.17u \n", j);
-	//ft_printf("Unsigned int test %%30.17u : %30.17u \n", j);
+	ft_printf("Unsigned int test %%30.17u : %30.17u \n", j);
 	printf("Unsigned int test %%30.18u : %30.18u \n", j);
-	//ft_printf("Unsigned int test %%30.18u : %30.18u \n", j);
+	ft_printf("Unsigned int test %%30.18u : %30.18u \n", j);
 	printf("Unsigned int test %%*.17u (* is 30) : %*.17u \n", 30, j);
-	//ft_printf("Unsigned int test %%*.17u (* is 30) : %*.17u \n", 30, j);
+	ft_printf("Unsigned int test %%*.17u (* is 30) : %*.17u \n", 30, j);
 	printf("Unsigned int test %%30.*u (* is 17) : %30.*u \n", 17, j);
-	//ft_printf("Unsigned int test %%30.*u (* is 17) : %30.*u \n", 17, j);
+	ft_printf("Unsigned int test %%30.*u (* is 17) : %30.*u \n", 17, j);
 	printf("Unsigned int test %%*.*u (* is 30 and 17) : %*.*u \n", 30, 17, j);
-	//ft_printf("Unsigned int test %%*.*u (* is 30 and 17) : %*.*u \n", 30, 17, j);
+	ft_printf("Unsigned int test %%*.*u (* is 30 and 17) : %*.*u \n", 30, 17, j);
 	printf("Unsigned int test %%*.*u (* is 30 and -17) : %*.*u \n", 30, -17, j);
-	//ft_printf("Unsigned int test %%*.*u (* is 30 and -17) : %*.*u \n", 30, -17, j);
+	ft_printf("Unsigned int test %%*.*u (* is 30 and -17) : %*.*u \n", 30, -17, j);
 	printf("Unsigned int test %%*.*u (* is 30 and 40) : %*.*u \n", 30, 40, j);
-	//ft_printf("Unsigned int test %%*.*u (* is 30 and 40) : %*.*u \n", 30, 40, j);
-
+	ft_printf("Unsigned int test %%*.*u (* is 30 and 40) : %*.*u \n", 30, 40, j);
+/*
 	printf("\nNOW WITH J = -4123456789\n");
 
 	j = -4123456789;
@@ -280,7 +279,8 @@ printf("\nWITH J = 4123456789\n");
 	//ft_printf("Unsigned int test %%*.*u (* is 30 and 40) : %*.*u \n", 30, 40, j);
     printf("%%s String (%%s, ''Hello world.''): ");
     printf("%s\n", "Hello world.");
-    printf("%%p Pointer: (%%p, &var): ");
+
+	printf("%%p Pointer: (%%p, &var): ");
     printf("%p\n", &var);
     printf("%%d Decimal signed integer (%%d, -10): ");
     printf("%d\n", -10);

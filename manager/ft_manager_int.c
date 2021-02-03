@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/01 22:20:29 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/03 12:18:30 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/03 15:28:21 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,5 @@ void		ft_manager_int(char *str, t_var var)
 			print_widthint(var, str);
 		ft_putstrint(str, var);
 	}
+	free(str);
 }

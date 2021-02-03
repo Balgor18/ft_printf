@@ -9,6 +9,7 @@ RM=rm -f
 SRC_LIBFT = flags/flags.c\
 			include_libft/ft_atoi.c\
 			include_libft/ft_itoa_base.c\
+			include_libft/ft_itoa_unsigned.c\
 			include_libft/ft_itoa.c\
 			include_libft/ft_memset.c\
 			include_libft/ft_putchar.c\
@@ -20,6 +21,7 @@ SRC_LIBFT = flags/flags.c\
 			manager/ft_manager_hexa.c\
 			manager/ft_manager_int.c\
 			manager/ft_manager_type.c\
+			manager/ft_manager_uns_int.c\
 			manager/ft_manager.c\
 			struct/ft_fill_nb.c\
 			struct/ft_fill_struct.c\
@@ -54,7 +56,7 @@ fclean: clean
 
 re: fclean all
 
-norminette:
+norme:
 				norminette -R CheckForbiddenSourceHeader .
 				norminette -R ChechDefine *.h
 

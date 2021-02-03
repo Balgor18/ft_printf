@@ -1,35 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_manager_hexa.c                                  :+:      :+:    :+:   */
+/*   ft_manager_uns_int.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/03 11:25:27 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/03 14:39:23 by fcatinau         ###   ########.fr       */
+/*   Created: 2021/02/03 15:31:21 by fcatinau          #+#    #+#             */
+/*   Updated: 2021/02/03 15:36:37 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*ft_str_toupper(char *str)
+void		ft_manager_uns_int(char *str,t_var var)
 {
-	int i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] >= 97 && str[i] <= 122)
-			str[i] = (str[i] - 32);
-		i++;
-	}
-	return (str);
-}
-
-void		ft_manager_hexa(char *str, t_var var)
-{
-	if (var.type == 'X')
-		str = ft_str_toupper(str);
 	if (var.total_print > 0 && var.flag.fl_less)
 	{
 		var.total_print = -1;
@@ -47,4 +31,5 @@ void		ft_manager_hexa(char *str, t_var var)
 			print_widthint(var, str);
 		ft_putstrint(str, var);
 	}
+	free(str);
 }

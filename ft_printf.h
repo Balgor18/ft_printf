@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 10:25:28 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/03 12:18:53 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/03 15:32:03 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void			*ft_memset(void *pointeur, int val, size_t size);
 int				ft_strlennb(char *s, size_t *pos);
 size_t			ft_atoi(char *c);
 char			*ft_itoa(int n);
+char			*ft_itoa_uns(unsigned int n);
 char			*ft_strdup(char *src);
 int				ft_strlen(char *c);
 size_t			ft_strlenint(int i);
@@ -103,6 +104,7 @@ void			ft_manager_type(va_list args, t_var var);
 void			ft_manager_char(char args, t_var var);
 void			ft_manager_int(char *str, t_var var);
 void			ft_manager_hexa(char *str, t_var var);
+void			ft_manager_uns_int(char *str,t_var var);
 /*
 ** main
 */
