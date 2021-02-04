@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 10:25:28 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/03 18:51:51 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/04 19:59:54 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,13 @@ typedef struct	s_var
 {
 	t_flag		flag;
 	int			total_width;
+	int			width_is_nega;
 	int			total_print;
+	int			tp_is_nega;
 	char		type;
 	int			error;
 	int			write_char;
+	int			already_print;
 }				t_var;
 
 /*
@@ -68,7 +71,7 @@ char			*ft_itoa_uns(unsigned int n);
 char			*ft_strdup(char *src);
 int				ft_strlen(char *c);
 t_var			ft_putstr(char *str, t_var var);
-t_var			ft_pustrint(char *str, t_var var);
+t_var			ft_putstrint(char *str, t_var var);
 char			zero_or_space(t_var var);
 char			*ft_hex_base(unsigned long long nbr);
 /*
@@ -87,7 +90,7 @@ t_var			flag_star(t_var var, va_list args, char *s, size_t *pos);
 ** printf
 */
 t_var			witdh_and_total_print(t_var var, char* args);
-t_var			print_widthint(t_var var, char *str);
+t_var			print_widthint(t_var var, char *str, int nbr);
 t_var			ft_putstrint(char *str, t_var var);
 /*
 ** verif
@@ -106,6 +109,8 @@ t_var			ft_manager_char(char args, t_var var);
 t_var			ft_manager_int(char *str, t_var var);
 t_var			ft_manager_hexa(char *str, t_var var);
 t_var			ft_manager_uns_int(char *str,t_var var);
+t_var			ft_manager_pointeur(char *str, t_var var);
+int				ft_width_manager(int width, int width_after, int flag_zero);
 /*
 ** main
 */

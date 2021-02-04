@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/31 22:58:10 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/03 19:06:24 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/03 20:49:19 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,5 @@ t_var		ft_manager_char(char args, t_var var)
 		ft_putchar(args);
 	}
 	var.write_char = var.write_char + 1;
-	//printf("apres manager char var.write_char %d \n",var.write_char);
 	return (var);
 }

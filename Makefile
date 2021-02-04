@@ -20,39 +20,45 @@ SRC_LIBFT = flags/flags.c\
 			manager/ft_manager_char.c\
 			manager/ft_manager_hexa.c\
 			manager/ft_manager_int.c\
+			manager/ft_manager_pointeur.c\
 			manager/ft_manager_type.c\
 			manager/ft_manager_uns_int.c\
 			manager/ft_manager.c\
+			manager/ft_width_manager.c\
 			struct/ft_fill_nb.c\
 			struct/ft_fill_struct.c\
 			struct/ft_init_struct.c\
 			verif/ft_verif_flags.c\
-			ft_printf.c
-#\
-#			test.c
+			ft_printf.c\
+			test.c
 
 OBJ_LIBFT = $(SRC_LIBFT:.c=.o)
 
 $(NAME): $(OBJ_LIBFT)
 #ligne du dessous a degager
-#				$(CC) -I. $(OBJ_LIBFT) $(CFLAGS)
-#				./a.out
-#				make clean
+				$(CC) -I. $(OBJ_LIBFT) $(CFLAGS)
 				ar rc $(NAME) $(OBJ_LIBFT)
 				ranlib $(NAME)
 
 %.o: %.c
-				$(CC) -I. -o $@ -c $? $(CFLAGS)
+				$(CC) -I. -o $@ -c $?
+#$(CFLAGS)
 
 all: $(NAME)
 
 clean:
 				$(RM) $(OBJ_LIBFT)
-#				$(RM) a.out
+				$(RM) a.out
 
 fclean: clean
 				$(RM) $(NAME)
 
 re: fclean all
+
+code: $(OBJ_LIBFT)
+				$(CC) -I. $(OBJ_LIBFT)
+#$(CFLAGS)
+				./a.out
+				make clean
 
 .PHONY: clean all fclean re $(NAME)

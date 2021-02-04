@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 09:34:45 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/01 21:44:32 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/04 20:02:35 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@ t_var		flag_less(t_var var, va_list args, char type)
 	i = va_arg(args, int);
 	if (i < 0)
 	{
+		if (type == 'w')
+			var.width_is_nega = 1;
+		else if (type == 't')
+			var.tp_is_nega = 1;
 		var.flag.fl_less = 1;
 		i = i * -1;
 	}
@@ -43,9 +47,7 @@ t_var		flag_star(t_var var, va_list args, char *s, size_t *pos)
 			*pos = *pos + 1;
 		}
 		else
-		{
 			var = ft_fill_tp(s, var, pos, args);
-		}
 	}
 	return (var);
 }

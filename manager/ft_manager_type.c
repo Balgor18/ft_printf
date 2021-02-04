@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/31 22:32:15 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/03 17:51:04 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/04 14:21:16 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ t_var	ft_manager_type(va_list args, t_var var)
 		var = ft_manager_hexa(ft_hex_base((va_arg(args, unsigned int))), var);
 	else if (var.type == 'u')
 		var = ft_manager_uns_int(ft_itoa_uns(va_arg(args, unsigned int)), var);
+	else if (var.type == 'p')
+		var = ft_manager_uns_int(ft_hex_base(va_arg(args, unsigned long long int)), var);
 	else if (var.type == '%')
 		var = ft_manager_char('%', var);
 	return (var);

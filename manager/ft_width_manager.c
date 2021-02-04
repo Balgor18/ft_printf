@@ -1,37 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_manager_uns_int.c                               :+:      :+:    :+:   */
+/*   ft_width_manager.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/03 15:31:21 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/04 16:18:35 by fcatinau         ###   ########.fr       */
+/*   Created: 2021/02/04 00:47:14 by fcatinau          #+#    #+#             */
+/*   Updated: 2021/02/04 00:47:15 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-t_var		ft_manager_uns_int(char *str,t_var var)
+int		ft_width_manager(int width, int width_after, int flag_zero)
 {
-	var.write_char = var.write_char + ft_strlen(str);
-	if (var.total_print > 0 && var.flag.fl_less)
+	int count;
+
+	count = 0;
+	while (width - width_after > 0)
 	{
-		var.total_print = -1;
-		var.flag.fl_less = 0;
+		if (flag_zero)
+			ft_putchar('0');
+		else
+			(ft_putchar(' '));
+		width--;
+		count++;
 	}
-	if (var.flag.fl_less)
-	{
-		ft_putstrint(str, var);
-		if (var.total_width > 0)
-			print_widthint(var, str, 0);
-	}
-	else
-	{
-		if (var.total_width > 0)
-			print_widthint(var, str, 0);
-		ft_putstrint(str, var);
-	}
-	free(str);
-	return (var);
+	return (count);
 }

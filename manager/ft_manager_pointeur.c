@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_manager_uns_int.c                               :+:      :+:    :+:   */
+/*   ft_manager_pointeur.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/03 15:31:21 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/04 16:18:35 by fcatinau         ###   ########.fr       */
+/*   Created: 2021/02/03 20:57:52 by fcatinau          #+#    #+#             */
+/*   Updated: 2021/02/04 16:18:17 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-t_var		ft_manager_uns_int(char *str,t_var var)
+t_var		ft_manager_pointeur(char *str, t_var var)
 {
-	var.write_char = var.write_char + ft_strlen(str);
-	if (var.total_print > 0 && var.flag.fl_less)
+		if (var.total_print > 0 && var.flag.fl_less)
 	{
 		var.total_print = -1;
 		var.flag.fl_less = 0;
 	}
 	if (var.flag.fl_less)
 	{
-		ft_putstrint(str, var);
+		var = ft_putstrint(str, var);
 		if (var.total_width > 0)
-			print_widthint(var, str, 0);
+			var = print_widthint(var, str, 0);
 	}
 	else
 	{
 		if (var.total_width > 0)
-			print_widthint(var, str, 0);
-		ft_putstrint(str, var);
+			var = print_widthint(var, str, 0);
+		var = ft_putstrint(str, var);
 	}
-	free(str);
 	return (var);
 }

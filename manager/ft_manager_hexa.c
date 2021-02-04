@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 11:25:27 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/03 17:56:35 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/04 16:19:36 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,12 @@ t_var		ft_manager_hexa(char *str, t_var var)
 	{
 		var = ft_putstrint(str, var);
 		if (var.total_width > 0)
-			var = print_widthint(var, str);
+			var = print_widthint(var, str, 0);
 	}
 	else
 	{
 		if (var.total_width > 0)
-			var = print_widthint(var, str);
+			var = print_widthint(var, str, 0);
 		var = ft_putstrint(str, var);
 	}
 	return (var);
