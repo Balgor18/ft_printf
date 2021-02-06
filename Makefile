@@ -6,29 +6,21 @@ CFLAGS=-Wall -Wextra -Werror
 
 RM=rm -f
 
-SRC_LIBFT = flags/flags.c\
+SRC_LIBFT = flags/flag_manager.c\
+			include_libft/checker.c\
 			include_libft/ft_atoi.c\
 			include_libft/ft_itoa_base.c\
 			include_libft/ft_itoa_unsigned.c\
 			include_libft/ft_itoa.c\
-			include_libft/ft_memset.c\
-			include_libft/ft_putchar.c\
-			include_libft/ft_putstr.c\
-			include_libft/ft_strdup.c\
-			include_libft/ft_strlen.c\
-			include_libft/ft_verif_isdigit.c\
-			manager/ft_manager_char.c\
+			include_libft/ft_unsigned_itoa.c\
+			include_libft/utilitils.c\
 			manager/ft_manager_hexa.c\
 			manager/ft_manager_int.c\
 			manager/ft_manager_pointeur.c\
 			manager/ft_manager_type.c\
 			manager/ft_manager_uns_int.c\
 			manager/ft_manager.c\
-			manager/ft_width_manager.c\
-			struct/ft_fill_nb.c\
-			struct/ft_fill_struct.c\
 			struct/ft_init_struct.c\
-			verif/ft_verif_flags.c\
 			ft_printf.c\
 			test.c
 

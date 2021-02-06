@@ -6,45 +6,79 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 10:24:32 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/03 22:04:21 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/06 20:57:11 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_parser(char *str, va_list ap)
+int		ft_check_flags(const char *content, int i, va_list args, t_var *var)
 {
-	size_t	i;
-	t_var	var;
-
-	var.write_char = 0;
-	i = 0;
-	while (str[i])
+	while (content[i])
 	{
-		if (str[i] == '%' && str[i + 1])
+		if (!istype(content[i]) && !isdigit(content[i]) && !isflag(content[i]))
+			break ;
+		if (content[i] == '-')
 		{
-			var = ft_verif_pourcent(str, ap, &i, var);
-			if (var.error)
-				return (0);
+			(*var).flag.minus = 1;
+			(*var).flag.zero = 0;
 		}
-		else
+		if (content[i] == '0' && (*var).flag.minus == 0 && (*var).total_width == 0)
+			(*var).flag.zero = 1;
+		if (content[i] == '.')
+			i = ft_flag_point(content, args, var, i);
+		if (content[i] == '*')
+			*var = ft_flag_star(*var, args);
+		if (istype(content[i]))
 		{
-			ft_putchar(str[i]);
-			var.write_char++;
+			(*var).type = content[i];
+			break ;
 		}
+		if (isdigit(content[i]))
+			*var = ft_flag_isdigit(*var, content[i]);
 		i++;
 	}
-	return (var.write_char);
+	return (i);
+}
+
+int		ft_content_manager(const char *content, va_list args)
+{
+	int		i;
+	int		count;
+	t_var	var;
+
+	i = 0;
+	count = 0;
+	ft_init_struct(&var);
+	while (content[i])
+	{
+		ft_init_struct(&var);
+		if (content[i] == '%' && content[i + 1])
+		{
+			i = ft_check_flags(content, i + 1, args, &var);
+			if (istype(content[i]))
+				count += ft_type_manager(var, (char)var.type, args);
+			else if (content[i])
+				count += ft_putchar(content[i]);
+		}
+		else if (content[i] != '%')
+			count += ft_putchar(content[i]);
+		i++;
+	}
+	return (count);
 }
 
 int		ft_printf(const char *str, ...)
 {
-	va_list	args;
-	int		nb_write;
+	int				nb_print;
+	const char		*content;
+	va_list			args;
 
+	nb_print = 0;
+	content = ft_strdup(str);
 	va_start(args, str);
-	if (!(nb_write = ft_parser((char *)str, args)))
-		return (nb_write);
+	nb_print = ft_content_manager(content, args);
 	va_end(args);
-	return (nb_write);
+	free((char *)content);
+	return (nb_print);
 }

@@ -6,68 +6,47 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 17:26:31 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/03 18:25:48 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/06 20:55:05 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t		diff_tp_real_size(char *s, t_var var)
+int		ft_point_check(char *str, t_var var, int len)
 {
-	size_t len;
+	int count;
 
-	len = ft_strlen(s);
-	if ((ft_strlen(s) - (int)var.total_print) < 0)
-		return (0);
-	return ((size_t)ft_strlen(s) - var.total_print);
-}
-
-int		ft_size_by_type(char* args)
-{
-	int i;
-
-	i = ft_strlen(args);
-	return (i);
-}
-
-char		zero_or_space(t_var var)
-{
-	if (var.flag.fl_zero)
-		return ('0');
-	return (' ');
-}
-
-t_var		witdh_and_total_print(t_var var, char* args)
-{
-	int		i;
-	int		size_type;
-
-	i = 0;
-	size_type = ft_size_by_type(args);
-	if (var.total_print >= 0)
-		var.total_width = var.total_width + diff_tp_real_size(args, var);
-	while (var.total_width > (i + size_type) )
+	count = 0;
+	if (var.flag.point == 1)
 	{
-		ft_putchar(zero_or_space(var));
-		i++;
-	}
-	var.write_char = var.write_char + i;
-	return (var);
-}
-
-t_var		ft_manager(char *args, t_var var)
-{
-	if (var.flag.fl_less)
-	{
-		var = ft_putstr(args, var);
-		if (var.total_width > 0)
-			var = witdh_and_total_print(var, args);
+		count += ft_width_manager(var.total_print, len, var.flag.zero);
+		count += ft_putnstr(str, var.total_print);
 	}
 	else
-	{
-		if (var.total_width > 0)
-			var = witdh_and_total_print(var, args);
-		var = ft_putstr(args, var);
-	}
-	return (var);
+		count += ft_putnstr(str, len);
+	return (count);
+}
+
+int		ft_string_manager(t_var var, char *str)
+{
+	int count;
+	int len;
+
+	if (str == NULL)
+		str = "(null)";
+	len = ft_strlen(str);
+	count = 0;
+	if (var.flag.point > 0 && var.total_print > len)
+		var.total_print = len;
+	if (var.flag.minus == 1)
+		count += ft_point_check(str, var, len);
+	if (var.flag.point == 1)
+		count += ft_width_manager(var.total_width, var.total_print
+			, var.flag.zero);
+	else
+		count += ft_width_manager(var.total_width, ft_strlen(str)
+			, var.flag.zero);
+	if (var.flag.minus == 0)
+		count += ft_point_check(str, var, len);
+	return (count);
 }

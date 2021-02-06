@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 10:25:28 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/04 19:59:54 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/06 20:54:15 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,23 +29,19 @@
 
 typedef struct	s_flag
 {
-	int			fl_star;
-	int			fl_less;
-	int			fl_zero;
-	int			fl_point;
+	int			star;
+	int			minus;
+	int			zero;
+	int			point;
 }				t_flag;
 
 typedef struct	s_var
 {
 	t_flag		flag;
 	int			total_width;
-	int			width_is_nega;
 	int			total_print;
-	int			tp_is_nega;
 	char		type;
 	int			error;
-	int			write_char;
-	int			already_print;
 }				t_var;
 
 /*
@@ -62,58 +58,35 @@ typedef struct	s_var
 /*
 ** include
 */
-void			ft_putchar(char c);
-void			*ft_memset(void *pointeur, int val, size_t size);
-int				ft_strlennb(char *s, size_t *pos);
+int				ft_putchar(char c);
+int				isdigit(int c);
+int				istype(int c);
+int				isflag(int c);
+int				ft_putchar(char c);
+int				ft_strlen(char *str);
+int				ft_putstr(char *s);
+int				ft_putnstr(char *s, int to_print);
+char			*ft_strdup(const char *s1);
 size_t			ft_atoi(char *c);
 char			*ft_itoa(int n);
 char			*ft_itoa_uns(unsigned int n);
-char			*ft_strdup(char *src);
-int				ft_strlen(char *c);
-t_var			ft_putstr(char *str, t_var var);
-t_var			ft_putstrint(char *str, t_var var);
-char			zero_or_space(t_var var);
 char			*ft_hex_base(unsigned long long nbr);
-/*
-** struct
-*/
-t_var			ft_fill_w(char *s, t_var var, size_t *pos, va_list args);
-t_var			ft_fill_struct(char *s, t_var var, size_t *pos, va_list args);
-t_var			ft_init_struct(t_var var);
-char			*ft_fill_nb(char *s, char *nb, size_t pos);
-t_var			ft_fill_tp(char *s, t_var var, size_t *pos, va_list args);
-/*
-** Flags
-*/
-t_var			flag_star(t_var var, va_list args, char *s, size_t *pos);
-/*
-** printf
-*/
-t_var			witdh_and_total_print(t_var var, char* args);
-t_var			print_widthint(t_var var, char *str, int nbr);
-t_var			ft_putstrint(char *str, t_var var);
-/*
-** verif
-*/
-t_var			ft_verif_pourcent(char *s, va_list ap, size_t *pos, t_var var);
-int				ft_verif_isdigit(int c);
-t_var			ft_check_flags(t_var var, char *s, size_t *pos, va_list args);
-t_var			ft_check_type(t_var var, char *args);
-t_var			ft_check_type2(t_var var, char *args);
-/*
-** manager
-*/
-t_var			ft_manager(char *args, t_var var);
-t_var			ft_manager_type(va_list args, t_var var);
-t_var			ft_manager_char(char args, t_var var);
-t_var			ft_manager_int(char *str, t_var var);
-t_var			ft_manager_hexa(char *str, t_var var);
-t_var			ft_manager_uns_int(char *str,t_var var);
-t_var			ft_manager_pointeur(char *str, t_var var);
+char			*ft_unsigned_itoa(unsigned long long n);
+
+int				ft_type_manager(t_var var, char type, va_list args);
 int				ft_width_manager(int width, int width_after, int flag_zero);
-/*
-** main
-*/
+int				ft_hex_manager(t_var var, unsigned int nbr, int caps);
+int				ft_int_manager(t_var var, int nbr);
+int				ft_pointer_manager(t_var var, unsigned long long nbr);
+int				ft_unsigned_manager(t_var var, unsigned int nbr);
+int				ft_string_manager(t_var var, char *str);
+
+void			ft_init_struct(t_var *var);
+
+int				ft_flag_point(const char *content, va_list args, t_var *var, int index);
+t_var			ft_flag_star(t_var var, va_list args);
+t_var			ft_flag_isdigit(t_var var, char digit);
+
 int				ft_printf(const char *str, ...);
 
 #endif

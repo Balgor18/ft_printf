@@ -6,82 +6,70 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/01 22:20:29 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/04 19:38:28 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/06 20:11:30 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int			diff_tp(t_var var, char *str)
+int		ft_send_in_printer(t_var var, char *strnbr, int nbr)
 {
-	int i;
+	int count;
 
-	i = 0;
-	if (var.total_print < ft_strlen(str))
-		return (i);
-	i = var.total_print - ft_strlen(str);
-	if (i < 0)
-		i = i * -1;
-	return (i);
+	count = 0;
+	if (var.flag.point == 1 && nbr < 0)
+		ft_putchar('-');
+	if (var.flag.point == 1)
+		count += ft_width_manager(var.total_print - 1,
+		ft_strlen(strnbr) - 1, 1);
+	count += ft_putnstr(strnbr, ft_strlen(strnbr));
+	return (count);
 }
 
-int			is_sup_str(t_var var, char *str)
+int		ft_where_to_width(char *strnbr, t_var var, int nbr, int count)
 {
-	int i;
-
-	i = ft_strlen(str);
-	if (i < var.total_print)
-		return (1);
-	return (0);
-}
-
-t_var		print_widthint(t_var var, char *str, int nbr)
-{
-	int i;
-
-	i = -1;
-	if (nbr < 0 && var.flag.fl_zero)
+	if (var.flag.minus == 1)
+		count += ft_send_in_printer(var, strnbr, nbr);
+	if (var.total_print < ft_strlen(strnbr) && var.flag.point == 1)
+		var.total_print = ft_strlen(strnbr);
+	if (var.flag.point == 1)
 	{
-		ft_putchar(str[0]);
-		var.write_char++;
-		var.already_print = 1;
+		var.total_width = var.total_width - var.total_print;
+		count += ft_width_manager(var.total_width, 0, 0);
 	}
-	if (var.total_width < (i + ft_strlen(str)) || is_sup_str(var, str))
-		while(var.total_width >= (++i + ft_strlen(str) + diff_tp(var, str)))
-			ft_putchar(zero_or_space(var));
+	else if (var.flag.minus == 1 && var.flag.zero == 1)
+		count += ft_width_manager(var.total_width, ft_strlen(strnbr), 0);
 	else
-		while(var.total_width > (++i + ft_strlen(str)))
-			ft_putchar(zero_or_space(var));
-	var.write_char = var.write_char + i;
-	return (var);
+		count += ft_width_manager(var.total_width, ft_strlen(strnbr), var.flag.zero);
+	if (var.flag.minus == 0)
+		count += ft_send_in_printer(var, strnbr, nbr);
+	return (count);
 }
 
-t_var		ft_manager_int(char *str, t_var var)
+int		ft_int_manager(t_var var, int nbr)
 {
-	int i;
+	int		count;
+	int		temp_nbr;
+	char	*strnbr;
 
-	i = ft_atoi(str);
-	if (var.total_width > 0 && var.flag.fl_less == 1)
-		var.flag.fl_zero = 0;
-	if (i == 0 && var.total_print == 0 && var.flag.fl_point == 1)
+	temp_nbr = nbr;
+	count = 0;
+	if (nbr == 0 && var.total_print == 0 && var.flag.point == 1)
 	{
-		var.write_char += ft_width_manager(var.total_width, 0, 0);
-		return (var);
+		count += ft_width_manager(var.total_width, 0, 0);
+		return (count);
 	}
-	else if (var.flag.fl_less)
+	if ((var.flag.point == 1 || var.flag.zero == 1) && nbr < 0)
 	{
-		printf("\nje print \n");
-		var = ft_putstrint(str, var);
-		printf("\nfin print \n");
-		if (var.total_width > 0)
-			var = print_widthint(var, str, i);
+		if (var.flag.point == 0 && var.flag.zero == 1)
+			ft_putnstr("-", 1);
+		nbr = -nbr;
+		var.flag.zero = 1;
+		var.total_width -= 1;
+		count++;
 	}
-	else
-	{
-		if (var.total_width > 0)
-			var = print_widthint(var, str, i);
-		var = ft_putstrint(str, var);
-	}
-	free(str);
-	return (var);
+	strnbr = ft_itoa(nbr);
+	count = ft_where_to_width(strnbr, var, temp_nbr, count);
+	free(strnbr);
+	return (count);
 }

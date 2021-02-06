@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 11:25:27 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/04 16:19:36 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/06 20:45:52 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,26 +26,52 @@ char	*ft_str_toupper(char *str)
 	return (str);
 }
 
-t_var		ft_manager_hexa(char *str, t_var var)
+int		ft_send_hex_in_printer(t_var var, char *strnbr)
 {
-	if (var.type == 'X')
-		str = ft_str_toupper(str);
-	if (var.total_print > 0 && var.flag.fl_less)
+	int count;
+
+	count = 0;
+	if (var.flag.point == 1)
+		count += ft_width_manager(var.total_print - 1,
+		ft_strlen(strnbr) - 1, 1);
+	count += ft_putnstr(strnbr, ft_strlen(strnbr));
+	return (count);
+}
+
+int		ft_where_to_width_hex(char *strnbr, t_var var, int count)
+{
+	if (var.flag.minus == 1)
+		count += ft_send_hex_in_printer(var, strnbr);
+	if (var.total_print < ft_strlen(strnbr) && var.flag.point == 1)
+		var.total_print = ft_strlen(strnbr);
+	if (var.flag.point == 1)
 	{
-		var.total_print = -1;
-		var.flag.fl_less = 0;
-	}
-	if (var.flag.fl_less)
-	{
-		var = ft_putstrint(str, var);
-		if (var.total_width > 0)
-			var = print_widthint(var, str, 0);
+		var.total_width = var.total_width - var.total_print;
+		count += ft_width_manager(var.total_width, 0, 0);
 	}
 	else
+		count += ft_width_manager(var.total_width, ft_strlen(strnbr), var.flag.zero);
+	if (var.flag.minus == 0)
+		count += ft_send_hex_in_printer(var, strnbr);
+	return (count);
+}
+
+int		ft_hex_manager(t_var var, unsigned int nbr, int caps)
+{
+	int					count;
+	char				*strnbr;
+
+	nbr = 0 + (unsigned int)(4294967295 + 1 + nbr);
+	count = 0;
+	if (nbr == 0 && var.total_width == 0 && var.flag.point == 1)
 	{
-		if (var.total_width > 0)
-			var = print_widthint(var, str, 0);
-		var = ft_putstrint(str, var);
+		count += ft_width_manager(var.total_width, 0, 0);
+		return (count);
 	}
-	return (var);
+	strnbr = ft_hex_base((unsigned long long)nbr);
+	if (caps == 1)
+		strnbr = ft_str_toupper(strnbr);
+	count = ft_where_to_width_hex(strnbr, var, count);
+	free(strnbr);
+	return (count);
 }
