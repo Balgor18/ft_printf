@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 10:25:28 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/06 20:54:15 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/07 01:52:13 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,15 +68,16 @@ int				ft_putstr(char *s);
 int				ft_putnstr(char *s, int to_print);
 char			*ft_strdup(const char *s1);
 size_t			ft_atoi(char *c);
-char			*ft_itoa(int n);
-char			*ft_itoa_uns(unsigned int n);
+char			*ft_itoa(long int n);
 char			*ft_hex_base(unsigned long long nbr);
 char			*ft_unsigned_itoa(unsigned long long n);
+int				ft_str_is_0(char *c);
+int				ft_print_min_int(char *str);
 
 int				ft_type_manager(t_var var, char type, va_list args);
 int				ft_width_manager(int width, int width_after, int flag_zero);
-int				ft_hex_manager(t_var var, unsigned int nbr, int caps);
-int				ft_int_manager(t_var var, int nbr);
+int				ft_hex_manager(t_var var, unsigned int nbr);
+int				ft_int_manager(t_var var,long int nbr);
 int				ft_pointer_manager(t_var var, unsigned long long nbr);
 int				ft_unsigned_manager(t_var var, unsigned int nbr);
 int				ft_string_manager(t_var var, char *str);

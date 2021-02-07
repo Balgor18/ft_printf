@@ -6,46 +6,63 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 15:34:19 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/29 20:35:43 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/07 00:40:21 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	itoa_negative(int *n, int *negative)
+long int	ft_change_sign(long int nbr)
 {
-	if (*n < 0)
-	{
-		*n *= -1;
-		*negative = 1;
-	}
+	if (nbr < 0)
+		return (-nbr);
+	else
+		return (nbr);
 }
 
-char	*ft_itoa(int n)
+int			ft_sign(long int n)
 {
-	int		tmp;
-	int		len;
-	int		nega;
-	char	*str;
+	if (n < 0)
+		return (-1);
+	else
+		return (1);
+}
 
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	tmp = n;
-	len = 2;
-	nega = 0;
-	itoa_negative(&n, &nega);
-	while (tmp /= 10)
-		len++;
-	len += nega;
-	if ((str = (char*)malloc(sizeof(char) * len)) == NULL)
-		return (NULL);
-	str[--len] = '\0';
-	while (len--)
+int			ft_len(long int nbr)
+{
+	int len;
+
+	if (nbr <= 0)
+		len = 1;
+	else
+		len = 0;
+	while (nbr != 0)
 	{
-		str[len] = n % 10 + '0';
-		n = n / 10;
+		nbr = nbr / 10;
+		len++;
 	}
-	if (nega)
+	return (len);
+}
+
+char		*ft_itoa(long int n)
+{
+	int			len;
+	int			sign;
+	char		*str;
+
+	sign = ft_sign(n);
+	len = ft_len(n); 
+	if (!(str = (char *)malloc(sizeof(char) * (len + 1))))
+		return (NULL);
+	str[len] = '\0';
+	len--;
+	while (len >= 0)
+	{
+		str[len] = '0' + ft_change_sign(n % 10);
+		n = n / 10;
+		len--;
+	}
+	if (sign == -1)
 		str[0] = '-';
 	return (str);
 }

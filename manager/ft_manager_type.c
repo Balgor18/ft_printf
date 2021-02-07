@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/31 22:32:15 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/06 19:21:46 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/07 02:20:47 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,9 @@ int		ft_type_manager(t_var var, char type, va_list args)
 	else if (type == 'u')
 		count += ft_unsigned_manager(var, va_arg(args, unsigned int));
 	else if (type == 'x')
-		count += ft_hex_manager(var, va_arg(args, unsigned int), 0);
+		count += ft_hex_manager(var, va_arg(args, unsigned int));
 	else if (type == 'X')
-		count += ft_hex_manager(var, va_arg(args, unsigned int), 1);
+		count += ft_hex_manager(var, va_arg(args, unsigned int));
 	else if (type == '%')
 		count += ft_char_manager(var, '%');
 	return (count);

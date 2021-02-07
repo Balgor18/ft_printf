@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 11:25:27 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/06 20:45:52 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/07 02:24:15 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,11 @@ int		ft_send_hex_in_printer(t_var var, char *strnbr)
 	int count;
 
 	count = 0;
+	if (ft_str_is_0(strnbr))
+	{
+		count += ft_width_manager( 1, 0, 0);
+		return (count);
+	}
 	if (var.flag.point == 1)
 		count += ft_width_manager(var.total_print - 1,
 		ft_strlen(strnbr) - 1, 1);
@@ -56,7 +61,7 @@ int		ft_where_to_width_hex(char *strnbr, t_var var, int count)
 	return (count);
 }
 
-int		ft_hex_manager(t_var var, unsigned int nbr, int caps)
+int		ft_hex_manager(t_var var, unsigned int nbr)
 {
 	int					count;
 	char				*strnbr;
@@ -69,7 +74,7 @@ int		ft_hex_manager(t_var var, unsigned int nbr, int caps)
 		return (count);
 	}
 	strnbr = ft_hex_base((unsigned long long)nbr);
-	if (caps == 1)
+	if (var.type == 'X')
 		strnbr = ft_str_toupper(strnbr);
 	count = ft_where_to_width_hex(strnbr, var, count);
 	free(strnbr);

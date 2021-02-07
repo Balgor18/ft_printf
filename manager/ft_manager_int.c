@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/01 22:20:29 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/06 20:11:30 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/07 00:39:50 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int		ft_where_to_width(char *strnbr, t_var var, int nbr, int count)
 	return (count);
 }
 
-int		ft_int_manager(t_var var, int nbr)
+int		ft_int_manager(t_var var,long int nbr)
 {
 	int		count;
 	int		temp_nbr;

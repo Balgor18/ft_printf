@@ -12,6 +12,7 @@ SRC_LIBFT = flags/flag_manager.c\
 			include_libft/ft_itoa_base.c\
 			include_libft/ft_itoa_unsigned.c\
 			include_libft/ft_itoa.c\
+			include_libft/ft_print_min_int.c\
 			include_libft/ft_unsigned_itoa.c\
 			include_libft/utilitils.c\
 			manager/ft_manager_hexa.c\
