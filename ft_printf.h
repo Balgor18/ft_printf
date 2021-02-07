@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 10:25:28 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/07 01:52:13 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/07 14:56:10 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ size_t			ft_atoi(char *c);
 char			*ft_itoa(long int n);
 char			*ft_hex_base(unsigned long long nbr);
 char			*ft_unsigned_itoa(unsigned long long n);
-int				ft_str_is_0(char *c);
+int				ft_str_is_0(char *c, t_var var);
 int				ft_print_min_int(char *str);
 
 int				ft_type_manager(t_var var, char type, va_list args);
