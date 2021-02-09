@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 11:25:27 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/09 01:33:14 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/09 17:22:08 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,14 @@ int		ft_where_to_width_hex(char *strnbr, t_var var, int count)
 	if (var.flag.point == 1)
 	{
 		var.total_width = var.total_width - var.total_print;
-		count += ft_width_manager(var.total_width, 0, 0);
+		if (var.total_width < 0)// verif si ca marche
+			var.total_width = var.total_width * -1;
+		//count += ft_width_manager(var.total_width, 0, 0);
+		count += ft_width_manager(var.total_width, var.total_print, var.flag.zero);
 	}
 	else
-		count += ft_width_manager(var.total_width, ft_strlen(strnbr), var.flag.zero);
+		count += ft_width_manager(var.total_width, ft_strlen(strnbr),
+		var.flag.zero);
 	if (var.flag.minus == 0)
 		count += ft_send_hex_in_printer(var, strnbr);
 	return (count);
@@ -63,6 +67,12 @@ int		ft_hex_manager(t_var var, unsigned int nbr)
 
 	count = 0;
 	if (nbr == 0 && var.total_width == 0 && var.flag.point == 1)
+	{
+		count += ft_width_manager(var.total_print, var.total_width, 1);
+		return (count);
+	}
+	else if (nbr == 0 && var.total_width > 0 && var.flag.point &&
+	var.flag.minus && !var.flag.zero)
 	{
 		count += ft_width_manager(var.total_width, var.total_print, 0);
 		return (count);

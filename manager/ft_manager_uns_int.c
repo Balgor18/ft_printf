@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 15:31:21 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/09 00:58:11 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/09 17:05:07 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ int		ft_send_uint_in_printer(t_var var, char *strnbr)
 
 	count = 0;
 	if (var.flag.point == 1)
-		count += ft_width_manager(var.total_width ,
-		ft_strlen(strnbr) , 1);
+		count += ft_width_manager(var.total_width,
+		ft_strlen(strnbr), 1);
 	count += ft_putnstr(strnbr, ft_strlen(strnbr));
 	return (count);
 }
@@ -33,10 +33,13 @@ int		ft_where_to_width_uint(char *strnbr, t_var var, int count)
 	if (var.flag.point == 1)
 	{
 		var.total_width = var.total_width - var.total_print;
-		count += ft_width_manager(var.total_width, 0, 0);
+		if (var.total_width < 0)// verif si ca marche
+			var.total_width = var.total_width * -1;
+		count += ft_width_manager(var.total_width, var.total_print, 0);
 	}
 	else
-		count += ft_width_manager(var.total_width, ft_strlen(strnbr), var.flag.zero);
+		count += ft_width_manager(var.total_width, ft_strlen(strnbr),
+		var.flag.zero);
 	if (var.flag.minus == 0)
 		count += ft_send_uint_in_printer(var, strnbr);
 	return (count);

@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 10:25:28 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/07 14:56:10 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/09 16:03:02 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int				ft_print_min_int(char *str);
 int				ft_type_manager(t_var var, char type, va_list args);
 int				ft_width_manager(int width, int width_after, int flag_zero);
 int				ft_hex_manager(t_var var, unsigned int nbr);
-int				ft_int_manager(t_var var,long int nbr);
+int				ft_int_manager(t_var var, long int nbr);
 int				ft_pointer_manager(t_var var, unsigned long long nbr);
 int				ft_unsigned_manager(t_var var, unsigned int nbr);
 int				ft_string_manager(t_var var, char *str);
