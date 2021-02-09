@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 11:25:27 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/07 22:35:14 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/09 01:33:14 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_str_toupper(char *str)
 
 int		ft_send_hex_in_printer(t_var var, char *strnbr)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	if (var.flag.point == 1)
@@ -61,11 +61,10 @@ int		ft_hex_manager(t_var var, unsigned int nbr)
 	int					count;
 	char				*strnbr;
 
-	nbr = 0 + (unsigned int)(4294967295 + 1 + nbr);
 	count = 0;
 	if (nbr == 0 && var.total_width == 0 && var.flag.point == 1)
 	{
-		count += ft_width_manager(var.total_width, 0, 0);
+		count += ft_width_manager(var.total_width, var.total_print, 0);
 		return (count);
 	}
 	strnbr = ft_hex_base((unsigned long long)nbr);
