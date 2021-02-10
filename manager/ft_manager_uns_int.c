@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 15:31:21 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/10 11:59:30 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/10 15:14:28 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,25 +21,18 @@ int		ft_send_uint_in_printer(t_var var, char *strnbr)
 	ft_strlen(strnbr))
 		var.total_width = var.total_print + 1;
 	if (var.flag.point == 1)
-		count += ft_width_manager(var.total_width - 1,
-		ft_strlen(strnbr), 1);
+	{
+		if (var.total_print > ft_strlen(strnbr) && var.total_width != var.total_print + 1)
+			count += ft_width_manager(var.total_print - 1,
+			var.total_width, 1);
+		else
+			count += ft_width_manager(var.total_width - 1,
+			ft_strlen(strnbr), 1);
+	}
 	count += ft_putnstr(strnbr, ft_strlen(strnbr));
-/*	if (var.flag.point == 1)
-		count += ft_width_manager(var.total_width,
-		ft_strlen(strnbr), 1);
-	count += ft_putnstr(strnbr, ft_strlen(strnbr));
-*/	return (count);
+	return (count);
 }
 
-/*
-** 	if (var.total_print > ft_strlen(strnbr) && var.total_width >=
-** 	ft_strlen(strnbr))
-** 		var.total_width = var.total_print + 1;
-** 	if (var.flag.point == 1)
-** 		count += ft_width_manager(var.total_width - 1,
-** 		ft_strlen(strnbr), 1);
-** 	count += ft_putnstr(strnbr, ft_strlen(strnbr));
-*/
 int		ft_where_to_width_uint(char *strnbr, t_var var, int count)
 {
 	if (var.flag.minus == 1)
@@ -65,20 +58,6 @@ int		ft_where_to_width_uint(char *strnbr, t_var var, int count)
 	return (count);
 }
 
-/*
-** if (var.flag.point == 1)
-** 	{
-** 		if (var.total_print > var.total_width)
-** 			var.total_width = var.total_print;
-** 		else
-** 			var.total_width = var.total_width - var.total_print;
-** 		if (var.total_width < 0)
-** 			var.total_width = var.total_width * -1;
-** 		count += ft_width_manager(var.total_width, var.total_print,
-** 		var.flag.zero);
-** 	}
-*/
-
 int		ft_unsigned_manager(t_var var, unsigned int nbr)
 {
 	int		count;
@@ -99,14 +78,3 @@ int		ft_unsigned_manager(t_var var, unsigned int nbr)
 	free(strnbr);
 	return (count);
 }
-/*
-** if (nbr == 0 && var.total_width >= 0 && var.flag.point == 1)
-** 	{
-** 		if (var.total_print > 0 && (var.total_width == 0 ||
-** 		var.total_print >= ft_strlen(strnbr)))
-** 			count += ft_width_manager(var.total_print, 0, 1);
-** 		else
-** 			count += ft_width_manager(var.total_width, 0, 0);
-** 		return (count);
-** 	}
-*/
