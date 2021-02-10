@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 11:25:27 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/09 22:57:36 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/10 11:36:01 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,12 @@ int		ft_send_hex_in_printer(t_var var, char *strnbr)
 	int	count;
 
 	count = 0;
+	if (var.total_print > ft_strlen(strnbr) && var.total_width >=
+	ft_strlen(strnbr))
+		var.total_width = var.total_print + 1;
 	if (var.flag.point == 1)
 		count += ft_width_manager(var.total_width - 1,
-		ft_strlen(strnbr) - 1, 1);
+		ft_strlen(strnbr), 1);
 	count += ft_putnstr(strnbr, ft_strlen(strnbr));
 	return (count);
 }
@@ -50,10 +53,10 @@ int		ft_where_to_width_hex(char *strnbr, t_var var, int count)
 			var.total_width = var.total_print;
 		else
 			var.total_width = var.total_width - var.total_print;
-		if (var.total_width < 0)// verif si ca marche
+		if (var.total_width < 0)
 			var.total_width = var.total_width * -1;
-		//count += ft_width_manager(var.total_width, 0, 0);
-		count += ft_width_manager(var.total_width, var.total_print, var.flag.zero);
+		count += ft_width_manager(var.total_width, var.total_print,
+		var.flag.zero);
 	}
 	else
 		count += ft_width_manager(var.total_width, ft_strlen(strnbr),
@@ -77,9 +80,10 @@ int		ft_hex_manager(t_var var, unsigned int nbr)
 	printf("var.total_width %d\n",var.total_width);
 	printf("var.total_print %d\n",var.total_print);
 */	strnbr = ft_hex_base((unsigned long long)nbr);
-	if (nbr == 0 && var.total_width >= 0 && var.flag.point == 1 )
+	if (nbr == 0 && var.total_width >= 0 && var.flag.point == 1)
 	{
-		if (var.total_print > 0 && (var.total_width == 0 || var.total_print >= ft_strlen(strnbr)))
+		if (var.total_print > 0 && (var.total_width == 0 ||
+		var.total_print >= ft_strlen(strnbr)))
 			count += ft_width_manager(var.total_print, 0, 1);
 		else
 			count += ft_width_manager(var.total_width, 0, 0);
