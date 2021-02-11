@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 15:31:21 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/10 23:43:28 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/11 11:17:43 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,27 @@ int		ft_send_uint_in_printer(t_var var, char *strnbr)
 
 int		ft_where_to_width_uint(char *strnbr, t_var var, int count)
 {
+	int size;
+
+	size = ft_strlen(strnbr);
 	if (var.flag.minus == 1)
 		count += ft_send_uint_in_printer(var, strnbr);
-	if (var.total_print < ft_strlen(strnbr) && var.flag.point == 1
+	if (var.total_print < size && var.flag.point == 1
 	&& var.total_print != 0)
-		var.total_print = ft_strlen(strnbr);
+		var.total_print = size;
 	if (var.flag.point == 1)
 	{
-		if (var.total_print > var.total_width || var.total_print == 0)
-			var.total_width = var.total_print;// + 1;
+		if (var.total_print > var.total_width || var.total_print == 0 || var.total_print == size)
+		{
+			if (var.total_width > size && (var.total_print == 0 || var.total_print == size))
+			{
+				if (var.flag.zero == 1)
+					var.flag.zero = 0;
+				var.total_width = var.total_print + 1;
+			}
+			else
+				var.total_width = var.total_print;
+		}
 		else
 			var.total_width = var.total_width - var.total_print;
 		if (var.total_width < 0)
@@ -59,8 +71,7 @@ int		ft_where_to_width_uint(char *strnbr, t_var var, int count)
 		var.flag.zero);
 	}
 	else
-		count += ft_width_manager(var.total_width, ft_strlen(strnbr),
-		var.flag.zero);
+		count += ft_width_manager(var.total_width, size, var.flag.zero);
 	if (var.flag.minus == 0)
 		count += ft_send_uint_in_printer(var, strnbr);
 	return (count);
