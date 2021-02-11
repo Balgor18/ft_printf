@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 15:31:21 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/11 11:17:43 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/11 11:44:54 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,20 +77,23 @@ int		ft_where_to_width_uint(char *strnbr, t_var var, int count)
 	return (count);
 }
 
+/*
+** printf("\nvoir les infos \n");
+** printf("var.flag.minus %d \n",var.flag.minus);
+** printf("var.flag.point %d \n",var.flag.point);
+** printf("var.flag.star %d \n",var.flag.star);
+** printf("var.flag.zero %d \n",var.flag.zero);
+** printf("var.total_width %d\n",var.total_width);
+** printf("var.total_print %d\n",var.total_print);
+*/
+
 int		ft_unsigned_manager(t_var var, unsigned int nbr)
 {
 	int		count;
 	char	*strnbr;
 
 	count = 0;
-/*	printf("\nvoir les infos \n");
-	printf("var.flag.minus %d \n",var.flag.minus);
-	printf("var.flag.point %d \n",var.flag.point);
-	printf("var.flag.star %d \n",var.flag.star);
-	printf("var.flag.zero %d \n",var.flag.zero);
-	printf("var.total_width %d\n",var.total_width);
-	printf("var.total_print %d\n",var.total_print);
-*/
+
 	strnbr = ft_unsigned_itoa((unsigned long long)nbr);
 	if (nbr == 0 && var.total_width >= 0 && var.flag.point == 1)
 	{
