@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 15:31:21 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/11 11:44:54 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/11 17:07:52 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,13 @@ int		ft_where_to_width_uint(char *strnbr, t_var var, int count)
 	{
 		if (var.total_print > var.total_width || var.total_print == 0 || var.total_print == size)
 		{
+			//printf("need add a condition \n");
+			//printf("%d > %d && (%d == 0 || %d == %d )\n",var.total_width, size, var.total_print, var.total_print, size);
 			if (var.total_width > size && (var.total_print == 0 || var.total_print == size))
 			{
 				if (var.flag.zero == 1)
 					var.flag.zero = 0;
-				var.total_width = var.total_print + 1;
+				var.total_width = var.total_print + size;
 			}
 			else
 				var.total_width = var.total_print;
@@ -99,7 +101,18 @@ int		ft_unsigned_manager(t_var var, unsigned int nbr)
 	{
 		if (var.total_print > 0 && (var.total_width == 0 ||
 		var.total_print >= ft_strlen(strnbr)))
-			count += ft_width_manager(var.total_print, 0, 1);
+		{
+			if (var.total_width > var.total_print)
+			{
+				if (var.flag.minus)
+					count += ft_width_manager(1, 0, 1);
+				count += ft_width_manager(var.total_print, 0, 0);
+				if (!var.flag.minus)
+					count += ft_width_manager(1, 0, 1);
+			}
+			else
+				count += ft_width_manager(var.total_print, 0, 1);
+		}
 		else
 			count += ft_width_manager(var.total_width, 0, 0);
 		return (count);

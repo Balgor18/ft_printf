@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 11:25:27 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/11 11:18:55 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/11 16:20:50 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,25 +93,39 @@ int		ft_where_to_width_hex(char *strnbr, t_var var, int count)
 	return (count);
 }
 
+/*
+** 	printf("\nvoir les infos \n");
+** 	printf("var.flag.minus %d \n",var.flag.minus);
+** 	printf("var.flag.point %d \n",var.flag.point);
+** 	printf("var.flag.star %d \n",var.flag.star);
+** 	printf("var.flag.zero %d \n",var.flag.zero);
+** 	printf("var.total_width %d\n",var.total_width);
+** 	printf("var.total_print %d\n",var.total_print);
+*/
+
 int		ft_hex_manager(t_var var, unsigned int nbr)
 {
 	int					count;
 	char				*strnbr;
 
 	count = 0;
-/*	printf("\nvoir les infos \n");
-	printf("var.flag.minus %d \n",var.flag.minus);
-	printf("var.flag.point %d \n",var.flag.point);
-	printf("var.flag.star %d \n",var.flag.star);
-	printf("var.flag.zero %d \n",var.flag.zero);
-	printf("var.total_width %d\n",var.total_width);
-	printf("var.total_print %d\n",var.total_print);
-*/	strnbr = ft_hex_base((unsigned long long)nbr);
+	strnbr = ft_hex_base((unsigned long long)nbr);
 	if (nbr == 0 && var.total_width >= 0 && var.flag.point == 1)
 	{
 		if (var.total_print > 0 && (var.total_width == 0 ||
 		var.total_print >= ft_strlen(strnbr)))
-			count += ft_width_manager(var.total_print, 0, 1);
+		{
+			if (var.total_width > var.total_print)
+			{
+				if (var.flag.minus)
+					count += ft_width_manager(1, 0, 1);
+				count += ft_width_manager(var.total_print, 0, 0);
+				if (!var.flag.minus)
+					count += ft_width_manager(1, 0, 1);
+			}
+			else
+				count += ft_width_manager(var.total_print, 0, 1);
+		}
 		else
 			count += ft_width_manager(var.total_width, 0, 0);
 		return (count);

@@ -28,7 +28,6 @@ SRC_LIBFT = flags/flag_manager.c\
 OBJ_LIBFT = $(SRC_LIBFT:.c=.o)
 
 $(NAME): $(OBJ_LIBFT)
-#ligne du dessous a degager
 				$(CC) -I. $(OBJ_LIBFT) $(CFLAGS)
 				ar rc $(NAME) $(OBJ_LIBFT)
 				ranlib $(NAME)
