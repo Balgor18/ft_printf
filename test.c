@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 13:50:31 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/11 17:20:24 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/13 13:16:01 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,10 +154,10 @@ int main()
 //	printf(" --- Return : %d\n", printf("%*.*u, %*.*x, %*.*X, %*.*u, %*.*x, %*.*X, %*.*u, %*.*x, %*.*X, %*.*u, %*.*x, %*.*X, %*.*u, %*.*x, %*.*X, %*.*u, %*.*x, %*.*X, %*.*u, %*.*x, %*.*X, %*.*u, %*.*x, %*.*X", a, b, i, a, b, i, a, b, i, a, b, j, a, b, j, a, b, j, a, b, k, a, b, k, a, b, k, a, b, l, a, b, l, a, b, l, a, b, m, a, b, m, a, b, m, a, b, c, a, b, c, a, b, c, a, b, d, a, b, d, a, b, d, a, b, e, a, b, e, a, b, e));
 //	ft_printf(" --- Return : %d\n", ft_printf("%*.*u, %*.*x, %*.*X, %*.*u, %*.*x, %*.*X, %*.*u, %*.*x, %*.*X, %*.*u, %*.*x, %*.*X, %*.*u, %*.*x, %*.*X, %*.*u, %*.*x, %*.*X, %*.*u, %*.*x, %*.*X, %*.*u, %*.*x, %*.*X", a, b, i, a, b, i, a, b, i, a, b, j, a, b, j, a, b, j, a, b, k, a, b, k, a, b, k, a, b, l, a, b, l, a, b, l, a, b, m, a, b, m, a, b, m, a, b, c, a, b, c, a, b, c, a, b, d, a, b, d, a, b, d, a, b, e, a, b, e, a, b, e));
 
-	a = 2;
-	b = 0;
-	printf(" --- Return : %d\n", printf("%.*u, %.*x, %.*X", a, i, a, i, a, i));
-	ft_printf(" --- Return : %d\n", ft_printf("%.*u, %.*x, %.*X", a, i, a, i, a, i));
+//	a = 3;
+//	b = 0;
+	//printf(" --- Return : %d\n", printf("%.*u, %.*x, %.*X", a, i, a, i, a, i));
+	//ft_printf(" --- Return : %d\n", ft_printf("%.*u, %.*x, %.*X", a, i, a, i, a, i));
 	a = 3;
 	b = 0;
 	//	printf(" --- Return : %d\n", printf("%-*.*u, %-*.*x, %-*.*X, %-*.*u, %-*.*x, %-*.*X, %-*.*u, %-*.*x, %-*.*X, %-*.*u, %-*.*x, %-*.*X, %-*.*u, %-*.*x, %-*.*X, %-*.*u, %-*.*x, %-*.*X, %-*.*u, %-*.*x, %-*.*X, %-*.*u, %-*.*x, %-*.*X", a, b, i, a, b, i, a, b, i, a, b, j, a, b, j, a, b, j, a, b, k, a, b, k, a, b, k, a, b, l, a, b, l, a, b, l, a, b, m, a, b, m, a, b, m, a, b, c, a, b, c, a, b, c, a, b, d, a, b, d, a, b, d, a, b, e, a, b, e, a, b, e));
@@ -166,11 +166,11 @@ int main()
 //	ft_printf(" --- Return : %d\n", ft_printf("%*.*u, %*.*x, %*.*X, %*.*u, %*.*x, %*.*X, %*.*u, %*.*x, %*.*X, %*.*u, %*.*x, %*.*X, %*.*u, %*.*x, %*.*X, %*.*u, %*.*x, %*.*X, %*.*u, %*.*x, %*.*X, %*.*u, %*.*x, %*.*X", a, b, i, a, b, i, a, b, i, a, b, j, a, b, j, a, b, j, a, b, k, a, b, k, a, b, k, a, b, l, a, b, l, a, b, l, a, b, m, a, b, m, a, b, m, a, b, c, a, b, c, a, b, c, a, b, d, a, b, d, a, b, d, a, b, e, a, b, e, a, b, e));
 
 
-//	printf(" --- Return : %d\n", printf("%0*.*u, %0*.*x, %0*.*X", a, b, i, a, b, i, a, b, i));
-//	ft_printf(" --- Return : %d\n", ft_printf("%0*.*u, %0*.*x, %0*.*X", a, b, i, a, b, i, a, b, i));
-
-	printf(" --- Return : %d\n", printf("%*.*u, %*.*x, %*.*X", a, b, i, a, b, i, a, b, i));
-	ft_printf(" --- Return : %d\n", ft_printf("%*.*u, %*.*x, %*.*X", a, b, i, a, b, i, a, b, i));
+	printf(" --- Return : %d\n", printf("%0*.*u, %0*.*x, %0*.*X", a, b, c, a, b, c, a, b, c));
+	ft_printf(" --- Return : %d\n", ft_printf("%0*.*u, %0*.*x, %0*.*X", a, b, c, a, b, c, a, b, c));
+	printf("\n");
+	printf(" --- Return : %d\n", printf("%*.*u, %*.*x, %*.*X", a, b, c, a, b, c, a, b, c));
+	ft_printf(" --- Return : %d\n", ft_printf("%*.*u, %*.*x, %*.*X", a, b, c, a, b, c, a, b, c));
 
 	//printf(" --- Return : %d\n", printf("%-*.*u, %-*.*x, %-*.*X", a, b, c, a, b, c, a, b, c));
 	//ft_printf(" --- Return : %d\n", ft_printf("%-*.*u, %-*.*x, %-*.*X", a, b, c, a, b, c, a, b, c));
