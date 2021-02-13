@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 11:25:27 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/13 14:34:07 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/13 14:48:46 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,8 @@ int		ft_where_to_width_hex(char *strnbr, t_var var, int count)
 		count += ft_width_manager(var.total_width, 0, 0);
 	}
 	else
-		count += ft_width_manager(var.total_width, ft_strlen(strnbr), var.flag.zero);
+		count += ft_width_manager(var.total_width,
+		ft_strlen(strnbr), var.flag.zero);
 	if (var.flag.minus == 0)
 		count += ft_send_hex_in_printer(var, strnbr);
 	return (count);

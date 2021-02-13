@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 15:11:53 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/03 15:34:29 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/13 14:49:54 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_itoa_uns(unsigned int n)
 {
 	unsigned int		tmp;
 	unsigned int		len;
-	char	*str;
+	char				*str;
 
 	tmp = n;
 	len = 2;

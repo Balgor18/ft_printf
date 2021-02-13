@@ -33,8 +33,7 @@ $(NAME): $(OBJ_LIBFT)
 				ranlib $(NAME)
 
 %.o: %.c
-				$(CC) -I. -o $@ -c $?
-#$(CFLAGS)
+				$(CC) -I. -o $@ -c $? $(CFLAGS)
 
 all: $(NAME)
 
@@ -48,8 +47,7 @@ fclean: clean
 re: fclean all
 
 code: $(OBJ_LIBFT)
-				$(CC) -I. $(OBJ_LIBFT)
-#$(CFLAGS)
+				$(CC) -I. $(OBJ_LIBFT) $(CFLAGS)
 				./a.out
 				make clean
 

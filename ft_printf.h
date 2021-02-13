@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 10:25:28 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/09 16:03:02 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/13 14:53:59 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,6 @@ typedef struct	s_var
 ** |   |     Total Width
 ** |   Flags
 ** symbole de debut
-*/
-/*
 ** include
 */
 int				ft_putchar(char c);
@@ -71,7 +69,6 @@ size_t			ft_atoi(char *c);
 char			*ft_itoa(long int n);
 char			*ft_hex_base(unsigned long long nbr);
 char			*ft_unsigned_itoa(unsigned long long n);
-int				ft_str_is_0(char *c, t_var var);
 int				ft_print_min_int(char *str);
 
 int				ft_type_manager(t_var var, char type, va_list args);
@@ -84,7 +81,7 @@ int				ft_string_manager(t_var var, char *str);
 
 void			ft_init_struct(t_var *var);
 
-int				ft_flag_point(const char *content, va_list args, t_var *var, int index);
+int				ft_flag_point(const char *c, va_list args, t_var *var, int i);
 t_var			ft_flag_star(t_var var, va_list args);
 t_var			ft_flag_isdigit(t_var var, char digit);
 

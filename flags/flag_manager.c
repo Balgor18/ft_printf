@@ -6,32 +6,31 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/06 18:48:25 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/06 18:48:25 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/13 14:55:03 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_flag_point(const char *content, va_list args, t_var *var, int index)
+int		ft_flag_point(const char *c, va_list args, t_var *var, int i)
 {
-	index++;
-
-	if (content[index] == '*')
+	i++;
+	if (c[i] == '*')
 	{
 		(*var).flag.point = 1;
 		(*var).total_print = va_arg(args, int);
-		index++;
+		i++;
 	}
 	else
 	{
 		(*var).flag.point = 1;
-		while (isdigit(content[index]))
+		while (isdigit(c[i]))
 			(*var).total_print = ((*var).total_print * 10)
-				+ (content[index++] - '0');
+				+ (c[i++] - '0');
 	}
 	if ((*var).total_print < 0)
 		(*var).flag.point = 0;
-	return (index);
+	return (i);
 }
 
 t_var	ft_flag_star(t_var var, va_list args)

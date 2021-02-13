@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 15:32:53 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/01/29 18:18:34 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/13 14:39:04 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 size_t		ft_atoi(char *c)
 {
-	size_t i;
-	size_t sign;
-	size_t total;
+	size_t	i;
+	size_t	sign;
+	size_t	total;
 
 	total = 0;
 	i = 0;

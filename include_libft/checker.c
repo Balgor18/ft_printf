@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/06 18:51:57 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/07 21:46:02 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/13 14:43:40 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,4 @@ int		isflag(int c)
 		return (1);
 	else
 		return (0);
-}
-
-int		ft_str_is_0(char *c, t_var var)
-{
-	if(c[0] == '0' && var.flag.minus)
-		return (1);
-	return (0);
 }

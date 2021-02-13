@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 15:34:19 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/07 00:40:21 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/13 14:51:13 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ char		*ft_itoa(long int n)
 	char		*str;
 
 	sign = ft_sign(n);
-	len = ft_len(n); 
+	len = ft_len(n);
 	if (!(str = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	str[len] = '\0';

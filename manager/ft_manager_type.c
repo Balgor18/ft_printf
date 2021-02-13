@@ -6,7 +6,7 @@
 /*   By: fcatinau <fcatinau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/31 22:32:15 by fcatinau          #+#    #+#             */
-/*   Updated: 2021/02/10 11:22:01 by fcatinau         ###   ########.fr       */
+/*   Updated: 2021/02/13 14:51:23 by fcatinau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int		ft_width_manager(int width, int width_after, int flag_zero)
 	int count;
 
 	count = 0;
-//	printf(" %d - %d > 0\n",width, width_after);
 	while (width - width_after > 0)
 	{
 		if (flag_zero)
